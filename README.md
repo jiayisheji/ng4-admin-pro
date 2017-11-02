@@ -8,7 +8,7 @@
 
 - 安装[nodejs](https://nodejs.org/en/) >= 8.x
 
-- 安装Angular-cli[https://github.com/angular/angular-cli] >= 1.4.7
+- 安装[Angular-cli](https://github.com/angular/angular-cli) >= 1.4.7
 ```
 npm install -g @angular/cli
 ```
