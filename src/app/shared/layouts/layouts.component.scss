@@ -1,0 +1,40 @@
+.g-layout-sider {
+    position: relative;
+    transition: all .2s;
+    background: #001529;
+    min-width: 0;
+    min-height: 100vh;
+    box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+    z-index: 10;
+    max-width: 256px;
+    min-width: 256px;
+    width: 256px;
+    float: left;
+    &.layout-sider-collapsed {
+        max-width: 80px;
+        min-width: 80px;
+        width: 80px;
+    }
+}
+
+.g-layout {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -ms-flex: auto;
+    flex: auto;
+    background: #f0f2f5;
+}
+
+.layout-content {
+    margin: 24px 24px 0px;
+    height: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex: auto;
+    flex: auto;
+}

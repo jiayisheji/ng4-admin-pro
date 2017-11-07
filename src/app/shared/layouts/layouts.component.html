@@ -1,0 +1,12 @@
+<aside class="g-layout-sider" [ngClass]="{'layout-sider-collapsed': _fold}">
+    <app-sider [fold]="_fold"></app-sider>
+</aside>
+<div class="g-layout">
+    <app-header class="layout-header" (onToggle)="toggleSider($event)"></app-header>
+    <main class="layout-content">
+        <div class="layout-router">
+            <router-outlet></router-outlet>
+        </div>
+        <app-footer class="layout-footer"></app-footer>
+    </main>
+</div>
