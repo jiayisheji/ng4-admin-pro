@@ -2,13 +2,18 @@
 
 开箱即用的中台前端/设计解决方案。
 
+- 预览：[http://preview.pro.ant.design](http://preview.pro.ant.design)
+- 参考：[http://pro.ant.design](http://pro.ant.design)
+
+喜欢的话请点star，想订阅点watch，欢迎fork！
+
 ## 快速开始
 
 ### 安装必须依赖环境：
 
 - 安装[nodejs](https://nodejs.org/en/) >= 8.x
 
-- 安装Angular-cli[https://github.com/angular/angular-cli] >= 1.4.7
+- 安装[Angular-cli](https://github.com/angular/angular-cli) >= 1.4.7
 ```
 npm install -g @angular/cli
 ```
