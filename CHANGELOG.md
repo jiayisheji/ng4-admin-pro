@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/jiayisheji/ng4-admin-pro/compare/v1.0.0...v0.2.0) (2017-11-10)
+
+
+### Features
+
+* **全局样式:**  添加按钮样式 ([085264f](https://github.com/jiayisheji/ng4-admin-pro/commit/085264f))
+* **共享模块:**  添加dialog模块 dialog组件 附带confirm组件 ([4f7d931](https://github.com/jiayisheji/ng4-admin-pro/commit/4f7d931))
+
+
+### Performance Improvements
+
+* **共享组件:**  添加dialog模块 ([51e6129](https://github.com/jiayisheji/ng4-admin-pro/commit/51e6129))
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2017-11-07)
 
