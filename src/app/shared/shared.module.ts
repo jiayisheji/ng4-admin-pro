@@ -4,13 +4,14 @@ import { RouterModule } from '@angular/router';
 import { LayoutsComponent, SiderComponent, HeaderComponent, FooterComponent } from './layouts';
 
 import { MenuModule } from './menu';
-
+import { DialogModule } from './dialog';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    MenuModule
+    MenuModule,
+    DialogModule
   ],
   declarations: [
     LayoutsComponent,
@@ -22,6 +23,7 @@ import { MenuModule } from './menu';
     CommonModule,
     RouterModule,
     MenuModule,
+    DialogModule,
     LayoutsComponent,
     SiderComponent,
     HeaderComponent,
