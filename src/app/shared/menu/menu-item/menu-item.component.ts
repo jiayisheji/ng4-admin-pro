@@ -85,11 +85,9 @@ export class MenuItemComponent {
     @Optional() private subMenu: SubMenuComponent,
     @Inject('MENU_CONFIG_PADDING') private PADDING_BASE
   ) {
-    console.log('app-menu-item', this.PADDING_BASE);
     this.menu.menuItems.push(this);
     if (this.hostElement.nativeElement.style['padding-left']) {
       this._padding = parseInt(this.hostElement.nativeElement.style['padding-left'], 10);
     }
   }
-
 }
