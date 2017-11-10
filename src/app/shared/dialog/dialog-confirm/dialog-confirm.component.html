@@ -1,0 +1,12 @@
+<div app-dialog-body>
+    <ng-template #defaultContent>
+        <div class="dialog-confirm-content">
+            <i>icon</i> {{ _content }}
+        </div>
+    </ng-template>
+    <ng-template [ngTemplateOutlet]="_contentTpl || defaultContent"></ng-template>
+</div>
+<div app-dialog-footer align="center">
+    <button type="button" class="u-btn u-btn-default" (click)="clickCancel($event)"><span>取消</span></button>
+    <button type="button" class="u-btn u-btn-primary" (click)="clickConfirm($event)"><span>确定</span></button>
+</div>

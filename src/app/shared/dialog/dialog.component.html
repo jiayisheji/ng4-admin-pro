@@ -1,0 +1,8 @@
+<div [ngClass]="_backdropClassMap" [style.zIndex]="_zIndex"></div>
+<div class="dialog" tabindex="-1" role="dialog" [style.zIndex]="_zIndex + 10" [ngStyle]="{ 'display': !_visible && !_animationStatus ? 'none' : 'block' }" #dialogContainer (click)="closeBackdrop($event)">
+    <div role="document" [ngClass]="_dialogClassMap">
+        <div class="dialog-content">
+            <ng-template #dialogComponent></ng-template>
+        </div>
+    </div>
+</div>
