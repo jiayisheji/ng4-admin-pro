@@ -1,0 +1,77 @@
+$sim-card-default-padding: 20px !default;
+$sim-card-border-radius: 2px !default;
+%sim-card-section-base {
+    display: block;
+    position: relative;
+}
+
+.sim-card {
+    @extend %sim-card-section-base;
+    border-radius: $sim-card-border-radius;
+    background-color: #fff;
+    transition: all 280ms cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    &[sim-card-bordered],
+    &[card-bordered] {
+        border: 1px solid #e9e9e9;
+    }
+    &[sim-card-hovering],
+    &[card-hovering] {
+        box-shadow: none;
+        &:hover {
+            box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+        }
+    }
+    &-header {
+        @extend %sim-card-section-base;
+        padding: 0 20px;
+        min-height: 48px;
+        line-height: 48px;
+    }
+    &-content {
+        @extend %sim-card-section-base;
+        padding: $sim-card-default-padding;
+    }
+    &[sim-card-paddings],
+    &[card-paddings] {
+        padding: $sim-card-default-padding;
+        .sim-card-header,
+        .sim-card-content {
+            padding: 0;
+        }
+        .sim-card-content {
+            padding-top: 20px;
+        }
+    }
+    &-loading {
+        user-select: none;
+        padding: 0;
+        &-block {
+            display: inline-block;
+            margin: 5px 1% 0;
+            height: 14px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, rgba(207, 216, 220, .2), rgba(207, 216, 220, .4), rgba(207, 216, 220, .2));
+            animation: card-loading 1.4s ease infinite;
+            background-size: 600% 600%;
+        }
+    }
+}
+
+.sim-divider {
+    display: block;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, .12);
+}
+
+@-webkit-keyframes card-loading {
+    0%,
+    to {
+        background-position: 0 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+}
