@@ -1,17 +1,29 @@
+/**
+ * angular core Module
+ */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
+/**
+ * Layout Components
+ */
 import { LayoutsComponent, SiderComponent, HeaderComponent, FooterComponent } from './layouts';
 
+/**
+ * Simple Utility components
+ */
 import { MenuModule } from './menu';
 import { DialogModule } from './dialog';
+import { CardModule } from './card';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     MenuModule,
-    DialogModule
+    DialogModule,
+    CardModule
   ],
   declarations: [
     LayoutsComponent,
@@ -24,6 +36,7 @@ import { DialogModule } from './dialog';
     RouterModule,
     MenuModule,
     DialogModule,
+    CardModule,
     LayoutsComponent,
     SiderComponent,
     HeaderComponent,
