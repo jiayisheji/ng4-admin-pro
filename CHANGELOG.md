@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/jiayisheji/ng4-admin-pro/compare/v0.2.0...v0.3.0) (2017-11-16)
+
+
+### Features
+
+* **共享模块:**  添加Card模块  Card组件  CardHeader组件  CardContent组件  Divider组件 ([31a2329](https://github.com/jiayisheji/ng4-admin-pro/commit/31a2329))
+
+
+### Performance Improvements
+
+* **共享模块:**  添加Card模块 ([1c6753e](https://github.com/jiayisheji/ng4-admin-pro/commit/1c6753e))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/jiayisheji/ng4-admin-pro/compare/v1.0.0...v0.2.0) (2017-11-10)
 
