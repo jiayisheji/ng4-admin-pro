@@ -1,0 +1,101 @@
+<div class="page-header">
+    <sim-breadcrumb></sim-breadcrumb>
+    <div>
+        <h2>{{_title}}</h2>
+    </div>
+</div>
+<div class="page-content">
+
+</div>
+
+<h2>color</h2>
+<div>
+    <button sim-button>default</button>
+    <button sim-button [color]="'primary'">primary</button>
+    <button sim-button [color]="'secondary'">secondary</button>
+    <button sim-button [color]="'success'">success</button>
+    <button sim-button [color]="'danger'">danger</button>
+    <button sim-button [color]="'warning'">warning</button>
+    <button sim-button [color]="'info'">info</button>
+    <button sim-button [color]="'link'">link</button>
+</div>
+<br />
+<h2>size</h2>
+<div>
+    <button sim-button [color]="'primary'" [size]="'lg'">大按钮</button>
+    <button sim-button [color]="'info'">default|中等按钮</button>
+    <button sim-button [color]="'danger'" [size]="'sm'">小按钮</button>
+    <button sim-button [color]="'warning'" [size]="'xs'">超小按钮</button>
+</div>
+<br />
+<h2>shape</h2>
+<h3>default</h3>
+<div>
+    <button sim-button>default</button>
+    <button sim-button [color]="'primary'">primary</button>
+    <button sim-button [color]="'secondary'">secondary</button>
+    <button sim-button [color]="'success'">success</button>
+    <button sim-button [color]="'danger'">danger</button>
+    <button sim-button [color]="'warning'">warning</button>
+    <button sim-button [color]="'info'">info</button>
+</div>
+<br />
+<h3>outline</h3>
+<div>
+    <button sim-button [shape]="'outline'">default</button>
+    <button sim-button [color]="'primary'" [shape]="'outline'">primary</button>
+    <button sim-button [color]="'secondary'" [shape]="'outline'">secondary</button>
+    <button sim-button [color]="'success'" [shape]="'outline'">success</button>
+    <button sim-button [color]="'danger'" [shape]="'outline'">danger</button>
+    <button sim-button [color]="'warning'" [shape]="'outline'">warning</button>
+    <button sim-button [color]="'info'" [shape]="'outline'">info</button>
+</div>
+<br />
+<h3>dashed</h3>
+<div>
+    <button sim-button [shape]="'dashed'">default</button>
+    <button sim-button [color]="'primary'" [shape]="'dashed'">primary</button>
+    <button sim-button [color]="'secondary'" [shape]="'dashed'">secondary</button>
+    <button sim-button [color]="'success'" [shape]="'dashed'">success</button>
+    <button sim-button [color]="'danger'" [shape]="'dashed'">danger</button>
+    <button sim-button [color]="'warning'" [shape]="'dashed'">warning</button>
+    <button sim-button [color]="'info'" [shape]="'dashed'">info</button>
+</div>
+<br />
+<h2>pill</h2>
+<div>
+    <button sim-button sim-button-pill>default</button>
+    <button sim-button [color]="'primary'" sim-button-pill [shape]="'outline'">primary</button>
+    <button sim-button [color]="'secondary'" sim-button-pill [shape]="'dashed'">secondary</button>
+    <button sim-button [color]="'success'" sim-button-pill>success</button>
+    <button sim-button [color]="'danger'" sim-button-pill>danger</button>
+    <button sim-button [color]="'warning'" sim-button-pill>warning</button>
+    <button sim-button [color]="'info'" sim-button-pill>info</button>
+</div>
+<br />
+<h2>block</h2>
+<div>
+    <button sim-button [color]="'primary'" sim-button-block>primary block</button>
+</div>
+<br />
+
+
+<button sim-button [color]="'primary'" (click)="open1($event, confirmTpl)">打开弹窗</button>
+
+<button sim-button appDialogClose>打开弹窗</button>
+<ng-template #confirmTpl>
+    你红包
+</ng-template>
+
+<sim-card sim-card-paddings>
+    <sim-card-header>sim-card-header-1</sim-card-header>
+    <sim-divider></sim-divider>
+    <sim-card-content [loading]="_loading">sim-card-content-1</sim-card-content>
+</sim-card>
+<button sim-button sim-button-block (click)="_loading = false">打开弹窗</button>
+
+<div sim-card sim-card-hovering>
+    <div sim-card-header>sim-card-header-2</div>
+    <div sim-divider></div>
+    <div sim-card-content [loading]="_loading">sim-card-content-2</div>
+</div>
