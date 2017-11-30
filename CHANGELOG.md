@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/jiayisheji/ng4-admin-pro/compare/v0.3.0...v0.4.0) (2017-11-30)
+
+
+### Features
+
+* **UI组件模块:**  新增UI组件模块，导出Card,Button,Menu,Dialog模块 ([351fa1a](https://github.com/jiayisheji/ng4-admin-pro/commit/351fa1a))
+* **共享模块:**  添加Button模块  Button组件  ButtonBloc，ButtonPill指令 ([698c42f](https://github.com/jiayisheji/ng4-admin-pro/commit/698c42f))
+* **共享组件:**  新增Breadcrumb模块，及Breadcrumb组件 ([4b2da45](https://github.com/jiayisheji/ng4-admin-pro/commit/4b2da45))
+* **核心功能:**  注入路由认证守卫服务，添加引用路径 ([55d8317](https://github.com/jiayisheji/ng4-admin-pro/commit/55d8317))
+* **核心模块:**  添加路由守卫，登录认证守卫 ([3ffd4be](https://github.com/jiayisheji/ng4-admin-pro/commit/3ffd4be))
+* **配置模块:**  移动Nav数据到配置模块 ([a70c8f8](https://github.com/jiayisheji/ng4-admin-pro/commit/a70c8f8))
+
+
+### Performance Improvements
+
+* **Dashboard:**  移动Dashboard模块，控制台组件，分析页，监控页到特性模块下 ([68bce36](https://github.com/jiayisheji/ng4-admin-pro/commit/68bce36))
+* **UI组件模块:**  调整Button模块由共享模块到UI组件模块 ([31aa15c](https://github.com/jiayisheji/ng4-admin-pro/commit/31aa15c))
+* **UI组件模块:**  调整card模块由共享模块到UI组件模块 ([3b28059](https://github.com/jiayisheji/ng4-admin-pro/commit/3b28059))
+* **UI组件模块:**  调整Dialog模块由共享模块到UI组件模块 ([424aad2](https://github.com/jiayisheji/ng4-admin-pro/commit/424aad2))
+* **UI组件模块:**  调整Menu模块由共享模块到UI组件模块 ([40bd772](https://github.com/jiayisheji/ng4-admin-pro/commit/40bd772))
+* **全局布局:**  新增Layout模块到特性模块里，调整Header,Footer,Sider模块到Layout里 ([d51a4a6](https://github.com/jiayisheji/ng4-admin-pro/commit/d51a4a6))
+* **共享模块:**  从配置模块引入nav数据 ([94892b9](https://github.com/jiayisheji/ng4-admin-pro/commit/94892b9))
+* **共享模块:**  移除布局模块相关组件，UI组件移动到UI组件模块 ([95bbf96](https://github.com/jiayisheji/ng4-admin-pro/commit/95bbf96))
+* **列表模块:**  移动列表页模块到特性模块下 ([50e2e25](https://github.com/jiayisheji/ng4-admin-pro/commit/50e2e25))
+* **布局模块:**  删除Pages模块 ([2deb776](https://github.com/jiayisheji/ng4-admin-pro/commit/2deb776))
+* **帐户模块:**  移动账号模块，登录组件，注册组件，注册成功页面到特性模块下 ([f87b10e](https://github.com/jiayisheji/ng4-admin-pro/commit/f87b10e))
+* **异常模块:**  移动异常模块，403组件，404组件，500组件到特性模块下 ([065b929](https://github.com/jiayisheji/ng4-admin-pro/commit/065b929))
+* **根模块:**  根据页面布局调整跟路由，添加路由守卫 ([724e330](https://github.com/jiayisheji/ng4-admin-pro/commit/724e330))
+* **结果模块:**  移动结果模块，成功组件，失败组件到特性模块下 ([b8cc657](https://github.com/jiayisheji/ng4-admin-pro/commit/b8cc657))
+* **表单模块:**  移动表单模块，基础表单组件，分步表单组件，高级表单组件到特性模块下 ([f04aedd](https://github.com/jiayisheji/ng4-admin-pro/commit/f04aedd))
+* **详情模块:**  移动详情页模块，基础详情页组件，高级详情页组件到特性模块下 ([30626e1](https://github.com/jiayisheji/ng4-admin-pro/commit/30626e1))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/jiayisheji/ng4-admin-pro/compare/v0.2.0...v0.3.0) (2017-11-16)
 
