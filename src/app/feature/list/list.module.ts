@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '@app/shared';
 
 import { ListRoutingModule } from './list-routing.module';
 import { TableListComponent } from './table-list/table-list.component';
@@ -11,9 +11,16 @@ import { SearchComponent } from './search/search.component';
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     ListRoutingModule
   ],
-  declarations: [TableListComponent, BasicListComponent, CardListComponent, CoverCardListComponent, FilterCardListComponent, SearchComponent]
+  declarations: [
+    TableListComponent,
+    BasicListComponent,
+    CardListComponent,
+    CoverCardListComponent,
+    FilterCardListComponent,
+    SearchComponent
+  ]
 })
 export class ListModule { }
