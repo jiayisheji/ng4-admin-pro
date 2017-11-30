@@ -1,6 +1,7 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthGuard } from './route-guards';
 @NgModule({
   imports: [
     HttpClientModule,
@@ -13,7 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         // api请求根地址
         api: 'http://localhost:3000/api/v1'
       }
-    }
+    },
+    AuthGuard
   ]
 })
 export class CoreModule {
