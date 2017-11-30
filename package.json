@@ -14,12 +14,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open --port 8080",
+    "start": "ng serve --open --port 9090",
     "build": "ng build --prod",
-    "test": "ng test",
+    "test": "npm run lint && ng test --single-run",
+    "watch": "ng test --browsers ChromeHeadless --reporters spec",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "release": "standard-version"
+    "release": "standard-version && git push --follow-tags origin master"
   },
   "repository": {
     "type": "git",
