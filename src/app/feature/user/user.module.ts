@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '@app/shared';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
@@ -9,7 +9,7 @@ import { RegisterResultComponent } from './register-result/register-result.compo
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     UserRoutingModule
   ],
   declarations: [UserComponent, LoginComponent, RegisterComponent, RegisterResultComponent]
