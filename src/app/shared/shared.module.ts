@@ -5,42 +5,29 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-/**
- * Layout Components
- */
-import { LayoutsComponent, SiderComponent, HeaderComponent, FooterComponent } from './layouts';
+import { getNavData } from './nav';
 
 /**
  * Simple Utility components
  */
-import { MenuModule } from './menu';
-import { DialogModule } from './dialog';
-import { CardModule } from './card';
+import { SimpleModule } from '@app/simple';
+
+import { BreadcrumbModule } from './breadcrumb';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    MenuModule,
-    DialogModule,
-    CardModule
+    SimpleModule.forRoot(),
+    BreadcrumbModule.forRoot(getNavData),
   ],
   declarations: [
-    LayoutsComponent,
-    SiderComponent,
-    HeaderComponent,
-    FooterComponent
   ],
   exports: [
     CommonModule,
     RouterModule,
-    MenuModule,
-    DialogModule,
-    CardModule,
-    LayoutsComponent,
-    SiderComponent,
-    HeaderComponent,
-    FooterComponent
+    SimpleModule,
+    BreadcrumbModule,
   ]
 })
 export class SharedModule { }
