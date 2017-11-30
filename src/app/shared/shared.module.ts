@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { getNavData } from './nav';
+import { getNavData } from '@app/config';
 
 /**
  * Simple Utility components
