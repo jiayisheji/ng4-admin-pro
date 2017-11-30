@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '@app/shared';
 
 import { ExceptionRoutingModule } from './exception-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -8,7 +8,7 @@ import { InternalServerErrorComponent } from './internal-server-error/internal-s
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     ExceptionRoutingModule
   ],
   declarations: [NotFoundComponent, ForbiddenComponent, InternalServerErrorComponent]
