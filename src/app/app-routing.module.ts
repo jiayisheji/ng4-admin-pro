@@ -1,10 +1,20 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule, Injectable } from '@angular/core';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
+import { AuthGuard } from '@app/core';
 
 const routes: Routes = [
     {
         path: '',
-        loadChildren: 'app/pages/pages.module#PagesModule'
+        canActivate: [AuthGuard],
+        loadChildren: 'app/feature/layout/layout.module#LayoutModule'
+    },
+    {
+        path: 'user',
+        loadChildren: 'app/feature/user/user.module#UserModule'
+    },
+    {
+        path: '**',
+        redirectTo: '/exception/404',
     }
 ];
 
