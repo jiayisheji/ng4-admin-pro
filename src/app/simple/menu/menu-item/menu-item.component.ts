@@ -15,7 +15,7 @@ import { Inject, HostListener } from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: '[app-menu-item]',
+  selector: '[sim-menu-item]',
   templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.scss'],
   encapsulation: ViewEncapsulation.None,

@@ -5,7 +5,7 @@ export type menuMode = 'vertical' | 'horizontal' | 'inline';
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: '[app-menu]',
+  selector: '[sim-menu]',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
   encapsulation: ViewEncapsulation.None,

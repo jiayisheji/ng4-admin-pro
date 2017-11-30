@@ -17,7 +17,7 @@ import { Subject } from 'rxjs/Subject';
 import { debounceTime } from 'rxjs/operator/debounceTime';
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: '[app-sub-menu]',
+  selector: '[sim-sub-menu]',
   templateUrl: './sub-menu.component.html',
   styleUrls: ['./sub-menu.component.scss'],
   encapsulation: ViewEncapsulation.None,
