@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-layouts',
-  templateUrl: './layouts.component.html',
-  styleUrls: ['./layouts.component.scss']
+  selector: 'app-layout',
+  templateUrl: './layout.component.html',
+  styleUrls: ['./layout.component.scss']
 })
-export class LayoutsComponent implements OnInit {
+export class LayoutComponent implements OnInit {
   _fold: boolean;
   constructor() { }
 
