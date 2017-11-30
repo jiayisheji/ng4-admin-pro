@@ -1,4 +1,14 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, HostBinding, Input, Directive, ElementRef, Renderer2 } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  ChangeDetectionStrategy,
+  HostBinding,
+  Input,
+  Directive,
+  ElementRef,
+  Renderer2
+} from '@angular/core';
 /**
  *  按钮颜色
  *   default 默认的
@@ -30,6 +40,7 @@ export type IButtonSize = 'default' | 'lg' | 'md' | 'sm' | 'xs';
  */
 export type IButtonShape = 'default' | 'outline' | 'dashed';
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: '[sim-button]',
   template: '<ng-content></ng-content>',
   styleUrls: ['./button.component.scss'],
@@ -95,6 +106,7 @@ export class ButtonComponent {
 }
 
 @Directive({
+  // tslint:disable-next-line:directive-selector
   selector: '[simButtonBlock],[sim-button-block]'
 })
 export class ButtonBlockDirective {
@@ -102,6 +114,7 @@ export class ButtonBlockDirective {
 }
 
 @Directive({
+  // tslint:disable-next-line:directive-selector
   selector: '[simButtonPill],[sim-button-pill]'
 })
 export class ButtonPillDirective {
