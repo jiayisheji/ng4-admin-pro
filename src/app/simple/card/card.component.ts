@@ -2,6 +2,7 @@ import { element } from 'protractor';
 import { Component, ViewEncapsulation, ChangeDetectionStrategy, HostBinding, Input } from '@angular/core';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'sim-card,[sim-card]',
   exportAs: 'simCard',
   template: '<ng-content></ng-content>',
@@ -16,6 +17,7 @@ export class CardComponent {
 
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'sim-card-header,[sim-card-header]',
   exportAs: 'simCardHeader',
   template: '<ng-content></ng-content>',
@@ -28,6 +30,7 @@ export class CardHeaderComponent {
 }
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'sim-card-content,[sim-card-content]',
   exportAs: 'simCardContent',
   template: `
@@ -55,7 +58,7 @@ export class CardHeaderComponent {
 export class CardContentComponent {
   @HostBinding('class.sim-card-content') _simCardContent = true;
 
-  _loading: boolean = false;
+  _loading = false;
   @Input()
   get loading(): boolean {
     return this._loading;
@@ -66,6 +69,7 @@ export class CardContentComponent {
 }
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'sim-divider,[sim-divider]',
   exportAs: 'simDivider',
   template: '',
