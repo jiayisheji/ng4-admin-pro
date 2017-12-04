@@ -7,13 +7,20 @@ import { MenuModule } from './menu';
 import { DialogModule } from './dialog';
 import { CardModule } from './card';
 import { ButtonModule } from './button';
+import { SpinnerModule } from './spinner';
+import { ListModule } from './list';
+import { AvatarModule } from './avatar';
+
 
 @NgModule({
     exports: [
         CardModule,
         ButtonModule,
         MenuModule,
-        DialogModule
+        DialogModule,
+        SpinnerModule,
+        ListModule,
+        AvatarModule
     ]
 })
 export class SimpleModule {
