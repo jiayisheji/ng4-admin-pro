@@ -1,167 +1,216 @@
 .sim-btn {
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: 400;
-    text-align: center;
-    vertical-align: middle;
-    touch-action: manipulation;
-    cursor: pointer;
-    background: none;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.5;
-    border-radius: 4px;
-    user-select: none;
-    transition: all .1s ease-in;
-    &[disabled],
-    &.disabled {
-        cursor: not-allowed;
-        box-shadow: none;
-        opacity: 0.65;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 4px;
+  user-select: none;
+  transition: all .1s ease-in;
+  &[disabled],
+  &.disabled {
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.65;
+  }
+  &:active,
+  &.active {
+    box-shadow: rgba(0, 0, 0, 0.125) 0px 3px 5px inset;
+    outline: 0;
+  }
+  &:hover:focus,
+  &:focus {
+    outline: 0;
+  }
+  &-dashed {
+    color: rgba(0, 0, 0, 0.65);
+    background-color: #fff;
+    border-color: #d9d9d9;
+    border-style: dashed;
+    &.sim-btn-default {
+      color: rgba(0, 0, 0, 0.65);
+      border-color: #d9d9d9;
+      background-color: #fff;
     }
-    &:active,
-    &.active {
-        box-shadow: rgba(0, 0, 0, 0.125) 0px 3px 5px inset;
-        outline: 0;
-    }
-    &:hover:focus,
-    &:focus {
-        outline: 0;
-    }
-    &-dashed {
-        border-style: dashed;
-    }
-    &-outline,
-    &-dashed {
-        &.sim-btn-default {
-            color: rgba(0, 0, 0, 0.65);
-            border-color: #d9d9d9;
-            background-color: #fff;
-        }
-        &.sim-btn-primary {
-            color: #3194d0;
-            border-color: #3194d0;
-            background-color: #fff;
-        }
-        &.sim-btn-secondary {
-            color: #868e96;
-            border-color: #868e96;
-            background-color: #fff;
-        }
-        &.sim-btn-info {
-            color: #5bc0de;
-            border-color: #5bc0de;
-            background-color: #fff;
-        }
-        &.sim-btn-warning {
-            color: #f0ad4e;
-            border-color: #f0ad4e;
-            background-color: #fff;
-        }
-        &.sim-btn-success {
-            color: #42c02e;
-            border-color: #42c02e;
-            background-color: #fff;
-        }
-        &.sim-btn-danger {
-            color: #ea6f5a;
-            border-color: #ea6f5a;
-            background-color: #fff;
-        }
-    }
-    &-default {
-        color: inherit;
-        &:hover {
-            color: #212529;
-            border: 1px solid #e2e6ea;
-            background-color: #e2e6ea;
-        }
-    }
-    &-primary {
-        color: #fff;
-        background-color: #3194d0;
-        &:hover {
-            color: #fff;
-            border: 1px solid #187cb7;
-            background-color: #187cb7;
-        }
-    }
-    &-secondary {
-        color: #fff;
-        background-color: #868e96;
-        &:hover {
-            color: #fff;
-            border: 1px solid #727b84;
-            background-color: #727b84;
-        }
-    }
-    &-info {
-        color: #fff;
-        background-color: #5bc0de;
-        &:hover {
-            color: #fff;
-            background-color: #31b0d5;
-            border: 1px solid #31b0d5;
-        }
-    }
-    &-warning {
-        color: #fff;
-        background-color: #f0ad4e;
-        &:hover {
-            color: #fff;
-            background-color: #ec971f;
-            border: 1px solid #ec971f;
-        }
-    }
-    &-success {
-        color: #fff;
-        background-color: #42c02e;
-        &:hover {
-            color: #fff;
-            background-color: #3db922;
-            border: 1px solid #3db922;
-        }
-    }
-    &-danger {
-        color: #fff;
-        background-color: #ea6f5a;
-        &:hover {
-            color: #fff;
-            background-color: #ec6149;
-            border: 1px solid #ec6149;
-        }
-    }
-    &-link {
+    &.sim-btn-primary {
+      &:hover {
         color: #3194d0;
-        padding: 0 5px;
-        border-radius: 0px;
-        &.disable {
-            pointer-events: none;
-        }
-        &:hover {
-            color: #23527c;
-            background-color: transparent;
-        }
+        border-color: #3194d0;
+        background-color: #fff;
+      }
     }
-    &-block {
-        display: block;
-        width: 100%;
+    &.sim-btn-secondary {
+      &:hover {
+        color: #868e96;
+        border-color: #868e96;
+        background-color: #fff;
+      }
     }
-    &-lg {
-        padding: 9px 25px;
-        font-size: 18px;
+    &.sim-btn-info {
+      &:hover {
+        color: #5bc0de;
+        border-color: #5bc0de;
+        background-color: #fff;
+      }
     }
-    &-sm {
-        font-size: 12px;
-        padding: 4px 10px;
+    &.sim-btn-warning {
+      &:hover {
+        color: #f0ad4e;
+        border-color: #f0ad4e;
+        background-color: #fff;
+      }
     }
-    &-xs {
-        padding: 0 8px;
-        font-size: 12px;
+    &.sim-btn-success {
+      &:hover {
+        color: #42c02e;
+        border-color: #42c02e;
+        background-color: #fff;
+      }
     }
-    &-pill {
-        border-radius: 10rem;
+    &.sim-btn-danger {
+      &:hover {
+        color: #ea6f5a;
+        border-color: #ea6f5a;
+        background-color: #fff;
+      }
     }
+  }
+  &-outline {
+    &.sim-btn-default {
+      color: rgba(0, 0, 0, 0.65);
+      border-color: #d9d9d9;
+      background-color: #fff;
+    }
+    &.sim-btn-primary {
+      color: #3194d0;
+      border-color: #3194d0;
+      background-color: #fff;
+    }
+    &.sim-btn-secondary {
+      color: #868e96;
+      border-color: #868e96;
+      background-color: #fff;
+    }
+    &.sim-btn-info {
+      color: #5bc0de;
+      border-color: #5bc0de;
+      background-color: #fff;
+    }
+    &.sim-btn-warning {
+      color: #f0ad4e;
+      border-color: #f0ad4e;
+      background-color: #fff;
+    }
+    &.sim-btn-success {
+      color: #42c02e;
+      border-color: #42c02e;
+      background-color: #fff;
+    }
+    &.sim-btn-danger {
+      color: #ea6f5a;
+      border-color: #ea6f5a;
+      background-color: #fff;
+    }
+  }
+  &-default {
+    color: inherit;
+    &:hover {
+      color: #212529;
+      border: 1px solid #e2e6ea;
+      background-color: #e2e6ea;
+    }
+  }
+  &-primary:not(.sim-btn-dashed) {
+    color: #fff;
+    background-color: #3194d0;
+    &:hover {
+      color: #fff;
+      border: 1px solid #187cb7;
+      background-color: #187cb7;
+    }
+  }
+  &-secondary:not(.sim-btn-dashed) {
+    color: #fff;
+    background-color: #868e96;
+    &:hover {
+      color: #fff;
+      border: 1px solid #727b84;
+      background-color: #727b84;
+    }
+  }
+  &-info:not(.sim-btn-dashed) {
+    color: #fff;
+    background-color: #5bc0de;
+    &:hover {
+      color: #fff;
+      background-color: #31b0d5;
+      border: 1px solid #31b0d5;
+    }
+  }
+  &-warning:not(.sim-btn-dashed) {
+    color: #fff;
+    background-color: #f0ad4e;
+    &:hover {
+      color: #fff;
+      background-color: #ec971f;
+      border: 1px solid #ec971f;
+    }
+  }
+  &-success:not(.sim-btn-dashed) {
+    color: #fff;
+    background-color: #42c02e;
+    &:hover {
+      color: #fff;
+      background-color: #3db922;
+      border: 1px solid #3db922;
+    }
+  }
+  &-danger:not(.sim-btn-dashed) {
+    color: #fff;
+    background-color: #ea6f5a;
+    &:hover {
+      color: #fff;
+      background-color: #ec6149;
+      border: 1px solid #ec6149;
+    }
+  }
+  &-link {
+    color: #3194d0;
+    padding: 0 5px;
+    border-radius: 0px;
+    &.disable {
+      pointer-events: none;
+    }
+    &:hover {
+      color: #23527c;
+      background-color: transparent;
+    }
+  }
+  &-block {
+    display: block;
+    width: 100%;
+  }
+  &-lg {
+    padding: 9px 25px;
+    font-size: 18px;
+  }
+  &-sm {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+  &-xs {
+    padding: 0 8px;
+    font-size: 12px;
+  }
+  &-pill {
+    border-radius: 10rem;
+  }
 }
