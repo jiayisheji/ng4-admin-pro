@@ -1,0 +1,14 @@
+<div class="g-exception" fxLayout="row" fxLayoutAlign="center center">
+  <div class="img-box" fxFlex="62.5%">
+    <div class="img" [style.backgroundImage]="_image"></div>
+  </div>
+  <section class="content" fxFlex="auto">
+    <h2 class="title">
+      <ng-content select="[title]"></ng-content>
+    </h2>
+    <p class="description">
+      <ng-content select="[description]"></ng-content>
+    </p>
+    <a routerLink="/" sim-button [color]="'primary'">返回首页</a>
+  </section>
+</div>
