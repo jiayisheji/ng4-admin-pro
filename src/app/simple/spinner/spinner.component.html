@@ -1,0 +1,7 @@
+<div class="sim-spinner-loading" *ngIf="loading">
+    <span class="sim-spinner-loading-dot"><i></i><i></i><i></i><i></i></span>
+    <div class="sim-spinner-loading-text">{{_tips}}</div>
+</div>
+<div class="sim-spinner-container" [ngClass]="{'sim-spinner-masking': loading}">
+    <ng-content></ng-content>
+</div>
