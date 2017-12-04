@@ -1,0 +1,14 @@
+<ul *ngIf="_Actions.length">
+  <li *ngFor="let item of _ActionsShow">
+    <ng-container [ngSwitch]="item.behavior">
+      <a (click)="buttonEvent(item.type)" *ngSwitchCase="'button'">{{item.name}}</a>
+      <a [href]="item.link" [target]="submenu.target" *ngSwitchCase="'link'">{{item.name}}</a>
+      <a [routerLink]="item.router" [queryParams]="item.queryParams" *ngSwitchCase="'router'">{{item.name}}</a>
+    </ng-container>
+  </li>
+  <li *ngIf="_ActionsHide.length">
+    <a class="ant-dropdown-trigger">更多
+      <i class="anticon anticon-down"></i>
+    </a>
+  </li>
+</ul>

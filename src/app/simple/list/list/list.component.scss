@@ -1,0 +1,42 @@
+.sim-list {
+  &-split .sim-list-item {
+    border-bottom: 1px solid #e8e8e8;
+  }
+  &-item {
+    align-items: center;
+    display: flex;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  &-loading {
+    text-align: center;
+  }
+  &-item-action {
+    font-size: 0;
+    flex: 0 0 auto;
+    margin-left: 48px;
+    padding: 0;
+    list-style: none;
+    >ul>li {
+      position: relative;
+      display: inline-block;
+      color: rgba(0, 0, 0, 0.45);
+      cursor: pointer;
+      padding: 0 8px;
+      position: relative;
+      font-size: 14px;
+      line-height: 22px;
+      text-align: center;
+      &:not(:last-child):after {
+        position: absolute;
+        content: "";
+        background-color: #e8e8e8;
+        margin-top: -7px;
+        top: 50%;
+        right: 0;
+        width: 1px;
+        height: 14px;
+      }
+    }
+  }
+}

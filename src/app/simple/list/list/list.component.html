@@ -1,0 +1,10 @@
+<sim-spinner [loading]="loading" [tips]="''">
+  <div class="sim-list-loading" *ngIf="!dataSource.length">暂无数据</div>
+  <ng-content></ng-content>
+</sim-spinner>
+<!-- <div *ngIf="loadMore">
+  <ng-content></ng-content>
+</div> -->
+<!-- <sim-pagination>
+          <div></div>
+        </sim-pagination> -->
