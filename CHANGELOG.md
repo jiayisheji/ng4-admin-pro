@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/jiayisheji/ng4-admin-pro/compare/v0.4.0...v0.5.0) (2017-12-04)
+
+
+### Bug Fixes
+
+* **全局布局:**  修复侧边栏引入菜单数据错误问题 ([4b61435](https://github.com/jiayisheji/ng4-admin-pro/commit/4b61435))
+
+
+### Features
+
+* **UI共享组件:** 新增导出SpinnerModule，ListModule，AvatarModule ([885666e](https://github.com/jiayisheji/ng4-admin-pro/commit/885666e))
+* **UI组件模块:**  新增Avatar模块，Avatar组件 ([3ea6ac8](https://github.com/jiayisheji/ng4-admin-pro/commit/3ea6ac8))
+* **UI组件模块:**  新增List模块，List，List-item等组件 ([05237b4](https://github.com/jiayisheji/ng4-admin-pro/commit/05237b4))
+* **UI组件模块:**  新增Spinner模块，Spinner组件 ([c6a8256](https://github.com/jiayisheji/ng4-admin-pro/commit/c6a8256))
+* **全局样式:**  新增三种文字颜色 ([500f727](https://github.com/jiayisheji/ng4-admin-pro/commit/500f727))
+* **共享模块:**  新增第三方FlexLayout模块 ([0d3ae22](https://github.com/jiayisheji/ng4-admin-pro/commit/0d3ae22))
+* **异常模块:**  新增403页面图片和完善展示效果 ([2fcca9f](https://github.com/jiayisheji/ng4-admin-pro/commit/2fcca9f))
+* **异常模块:**  新增404页面图片和完善展示效果 ([b15f070](https://github.com/jiayisheji/ng4-admin-pro/commit/b15f070))
+* **异常模块:**  新增500页面图片和完善展示效果 ([eec5d42](https://github.com/jiayisheji/ng4-admin-pro/commit/eec5d42))
+* **异常模块:**  新增异常模块下公共布局封装组件 ([9da8f89](https://github.com/jiayisheji/ng4-admin-pro/commit/9da8f89))
+* **异常模块:**  新增异常模块下公共布局封装组件注册 ([07b271e](https://github.com/jiayisheji/ng4-admin-pro/commit/07b271e))
+* **结果模块:**  新布局页面，完善效果展示 ([9988a79](https://github.com/jiayisheji/ng4-admin-pro/commit/9988a79))
+
+
+### Performance Improvements
+
+* **UI组件模块:**  修改虚线按钮样式，取消hover状态带背景颜色 ([38527a1](https://github.com/jiayisheji/ng4-admin-pro/commit/38527a1))
+* **全局布局:** 修改欲加载loading效果 ([9193ae9](https://github.com/jiayisheji/ng4-admin-pro/commit/9193ae9))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/jiayisheji/ng4-admin-pro/compare/v0.3.0...v0.4.0) (2017-11-30)
 
