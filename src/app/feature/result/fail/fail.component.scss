@@ -1,0 +1,50 @@
+.g-fail {
+  text-align: center;
+  width: 72%;
+  margin: 48px auto 16px;
+  .icon-box {
+    font-size: 72px;
+    line-height: 72px;
+    margin-bottom: 24px;
+  }
+  .title {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+    line-height: 32px;
+    margin-bottom: 16px;
+  }
+  .description {
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.45);
+    margin-bottom: 24px;
+  }
+  .extra {
+    background: #fafafa;
+    padding: 24px 40px;
+    border-radius: 2px;
+    text-align: left;
+    dt {
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.85);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    dd {
+      margin-bottom: 16px;
+      >i {
+        margin-right: 8px;
+      }
+      >a {
+        margin-left: 16px;
+      }
+    }
+  }
+  .actions {
+    margin-top: 32px;
+    button:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}
