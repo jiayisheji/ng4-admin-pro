@@ -8,6 +8,12 @@ import { RouterModule } from '@angular/router';
 import { getNavData } from '@app/config';
 
 /**
+ * 第三方依赖组件
+ */
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+
+/**
  * Simple Utility components
  */
 import { SimpleModule } from '@app/simple';
@@ -18,6 +24,7 @@ import { BreadcrumbModule } from './breadcrumb';
   imports: [
     CommonModule,
     RouterModule,
+    FlexLayoutModule,
     SimpleModule.forRoot(),
     BreadcrumbModule.forRoot(getNavData),
   ],
@@ -26,6 +33,7 @@ import { BreadcrumbModule } from './breadcrumb';
   exports: [
     CommonModule,
     RouterModule,
+    FlexLayoutModule,
     SimpleModule,
     BreadcrumbModule,
   ]
