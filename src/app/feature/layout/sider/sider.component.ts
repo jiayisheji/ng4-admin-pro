@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { getNavData } from '@app/shared/nav';
+import { getNavData } from '@app/config';
 
 @Component({
   selector: 'app-sider',
@@ -12,7 +12,7 @@ import { getNavData } from '@app/shared/nav';
 export class SiderComponent implements OnInit {
   _fold: boolean;
   @Input()
-  get fold() {
+  get fold(): boolean {
     return this._fold;
   }
   set fold(value: boolean) {
@@ -28,13 +28,13 @@ export class SiderComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log(this._fold);
     // this._menu = menu[0].children;
   }
 
-  open($event: boolean, item) {
+  open(event: boolean, item): void {
     this._menu.filter(m => m.name !== item.name).map(m => m._fold = false);
-    item._fold = $event;
+    item._fold = event;
   }
 }
