@@ -2,7 +2,7 @@
 
 开箱即用的中台前端/设计解决方案。
 
-- 预览：[http://preview.pro.ant.design](http://preview.pro.ant.design)
+- 预览：[https://jiayisheji.github.io/ng4-admin-pro](https://jiayisheji.github.io/ng4-admin-pro)
 - 参考：[http://pro.ant.design](http://pro.ant.design)
 
 喜欢的话请点star，想订阅点watch，欢迎fork！
