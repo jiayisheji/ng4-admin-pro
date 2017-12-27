@@ -1,10 +1,13 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BreadcrumbComponent } from './breadcrumb.component';
-import { INav } from '../nav';
+import { INav } from '@app/config/nav';
+import { RouterModule } from '@angular/router';
+import { BreadcrumbService} from './breadcrumb.service';
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   declarations: [BreadcrumbComponent],
   exports: [BreadcrumbComponent]
@@ -14,6 +17,7 @@ export class BreadcrumbModule {
     return {
       ngModule: BreadcrumbModule,
       providers: [
+        BreadcrumbService,
         { provide: 'BREADCRUMB_CONFIG', useValue: config }
       ]
     };
