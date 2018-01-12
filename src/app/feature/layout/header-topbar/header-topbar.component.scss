@@ -1,0 +1,131 @@
+:host {
+    .m-topbar {
+        margin: 0;
+        padding-left: 30px;
+        &-item {
+            height: 100%;
+            display: inline-block;
+            vertical-align: top;
+            .m-dropdown__wrapper {
+                display: none;
+            }
+            .m-topbar-item-search {
+                .search-wrapper {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: middle;
+                    height: 42px;
+                    border: 1px solid transparent;
+                    .item-link-icon {
+                        vertical-align: top;
+                    }
+                    .search-input {
+                        vertical-align: top;
+                        width: 0;
+                        height: 100%;
+                        border: none;
+                        background: none;
+                        opacity: 0;
+                        transition: width .3s ease-in,
+                        opacity .3s ease-in;
+                        &:focus {
+                            outline: 0;
+                        }
+                    }
+                }
+                &.search-focused {
+                    &:hover {
+                        .item-link-icon {
+                            color: #e8e7f4;
+                            background: none;
+                            border: none;
+                        }
+                    }
+                    .search-wrapper{
+                        border-color: #22b9ff;
+                        border-radius: 42px;
+                        padding-right: 42px;
+                        .item-link-icon {
+                            border: none;
+                            color: #e8e7f4;
+                            background: none;
+                        }
+                        .search-input {
+                            width: 200px;
+                            opacity: 1;
+                        }
+                    }
+                    .loading,
+                    .clear {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 42px;
+                        height: 42px;
+                        text-align: center;
+                        line-height: 42px;
+                    }
+
+                    .clear:hover {
+                        color: #666;
+                    }
+                }
+            }
+            .m-topbar-item-link {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                cursor: pointer;
+                height: 100%;
+                padding: 0 10px;
+                &:hover {
+                    .item-link-icon {
+                        color: #fff;
+                        background: #22b9ff;
+                        border: 1px solid #22b9ff;
+                    }
+                }
+            }
+            .item-link-icon {
+                display: inline-block;
+                width: 42px;
+                height: 42px;
+                line-height: 46px;
+                overflow: hidden;
+                text-align: center;
+                vertical-align: middle;
+                border: 1px solid #e8e7f4;
+                color: #e8e7f4;
+                border-radius: 50%;
+                i {
+                    font-size: 24px;
+                }
+            }
+            &.m-topbar-item-username {}
+            .m-topbar-item-notifications {}
+        }
+    }
+}
+
+.m-animate-shake {
+    animation: m-animate-shake 0.1s ease-in 0.1s infinite alternate;
+    animation-fill-mode: initial;
+}
+
+@keyframes m-animate-shake {
+    from {
+        -webkit-transform: rotate(13deg);
+        -moz-transform: rotate(13deg);
+        -ms-transform: rotate(13deg);
+        -o-transform: rotate(13deg);
+        transform: rotate(13deg);
+    }
+    to {
+        -webkit-transform-origin: center center;
+        -webkit-transform: rotate(-13deg);
+        -moz-transform: rotate(-13deg);
+        -ms-transform: rotate(-13deg);
+        -o-transform: rotate(-13deg);
+        transform: rotate(-13deg);
+    }
+}

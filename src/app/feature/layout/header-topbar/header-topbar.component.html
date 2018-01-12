@@ -1,0 +1,46 @@
+<ul class="m-topbar">
+    <li class="m-topbar-item">
+        <span class="m-topbar-item-link m-topbar-item-search" [class.search-focused]="isSearchOpen">
+          <form [formGroup]="searchForm">
+            <span class="search-wrapper">
+              <span class="item-link-icon" (click)="openSearch(search)">
+                <i class="icon-search"></i>
+              </span>
+              <input  type="text" class="search-input" autocomplete="off" #search formControlName="search" placeholder="全站搜索">
+              <span class="loading" *ngIf="searching == 2">
+                <i class="icon-loading icon-spin"></i>
+              </span>
+              <span class="clear" *ngIf="searching == 3 && search.value" (click)="clearSearch()">
+                <i class="icon-close"></i>
+              </span>
+            </span>
+          </form>
+        </span>
+    </li>
+    <li class="m-topbar-item ">
+        <span class="m-topbar-item-link m-topbar-item-notifications">
+      <sim-badge blink="true" count="100" [simStyle]="{ left: '40px', top: '-15px' }">
+        <ng-template #content>
+          <span class="item-link-icon">
+            <i class="icon-alert m-animate-shake"></i>
+          </span>
+        </ng-template>
+        </sim-badge>
+        </span>
+    </li>
+    <li class="m-topbar-item">
+        <span class="m-topbar-item-link">
+      <span class="item-link-icon">
+        <i class="icon-share"></i>
+      </span>
+        </span>
+    </li>
+    <li class="m-topbar-item m-topbar-item-username">
+        <span class="m-topbar-item-link">
+      <span class="item-link-icon">
+        <i class="icon-user-2"></i>
+      </span>
+        <span class="username">超级管理员</span>
+        </span>
+    </li>
+</ul>
