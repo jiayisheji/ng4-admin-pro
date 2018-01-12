@@ -1,0 +1,19 @@
+<sim-breadcrumb></sim-breadcrumb>
+<div class="detail">
+    <ng-container *ngIf="heading">
+        <div class="row">
+            <h2 class="heading">{{heading}}</h2>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="content">
+        <div class="row" fxLayout="row" fxLayoutAlign="start start">
+            <div class="content-wrapper" fxFlex="100%">
+                <ng-content select="[header-content]"></ng-content>
+            </div>
+            <div class="extra-wrapper" fxFlex="auto">
+                <ng-content select="[header-extra]"></ng-content>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<ng-content select="[header-other]"></ng-content>
