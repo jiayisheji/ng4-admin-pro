@@ -1,12 +1,32 @@
-<aside class="g-layout-sider" [ngClass]="{'layout-sider-collapsed': _fold}">
-    <app-sider [fold]="_fold"></app-sider>
-</aside>
-<div class="g-layout">
-    <app-header class="layout-header" (onToggle)="toggleSider($event)"></app-header>
-    <main class="layout-content">
-        <div class="layout-pages">
-            <router-outlet></router-outlet>
-        </div>
-        <app-footer class="layout-footer"></app-footer>
-    </main>
-</div>
+<app-sider [(collapsed)]="_isOpen" breakpoint="sm">
+  <h1 class="m-logo">
+    <a routerLink="/">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+        alt="logo">
+      <span>Ng4 Admin Pro</span>
+    </a>
+  </h1>
+  <app-sider-menu [items]="_menu" [collapsed]="_isOpen"></app-sider-menu>
+</app-sider>
+<main class="g-layout">
+  <app-header fxLayout="row" fxLayoutAlign="space-around center">
+    <i class="trigger-sider" fxFlex="66px" [ngClass]="{'icon-menu-fold': _isOpen, 'icon-menu-unfold': !_isOpen}" (click)="_isOpen = !_isOpen"></i>
+    <app-header-topbar fxFlex="100%" fxLayoutAlign="end"></app-header-topbar>
+  </app-header>
+  <app-content>
+    <sim-spinner [loading]="_loading" [tips]="''"></sim-spinner>
+    <div class="g-layout-pages">
+      <router-outlet></router-outlet>
+    </div>
+  </app-content>
+  <app-footer>
+    <div class="links">
+      <a target="_blank" href="https://github.com/jiayisheji/ng4-admin-pro">Pro GitHub</a>
+      <a target="_blank" href="https://github.com/jiayisheji">jiayi GitHub</a>
+      <a target="_blank" href="http://pro.ant.design">Ant Design Pro</a>
+    </div>
+    <div class="copyright">
+      <div>Copyright <i class="icon-copyright"></i> 2017 Jiayi 出品</div>
+    </div>
+  </app-footer>
+</main>
