@@ -14,14 +14,22 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open --port 9090",
-    "build": "ng build --prod",
+    "start": "concurrently -k -p \"[{name}]\" -n \"Angular,Mock\" -c \"yellow.bold,green.bold\" \"npm run serve\" \"npm run mock\"",
+    "serve": "ng serve --proxy-config proxy.conf.json --open --port 9090",
+    "mock": "json-server --watch mock/db.js --routes routes.json --port 9091",
+    "build": "rm -rf ./dist && ng build --prod",
+    "github": "rm -rf ./dist && ng build --env=github --prod --base-href https://jiayisheji.github.io/ng4-admin-pro/",
+    "publish": "git add dist && git commit -n -m \"release: git-pages\" && git subtree push --prefix dist origin gh-pages",
+    "git-pages": "npm run github && npm run publish",
     "test": "npm run lint && ng test --single-run",
     "watch": "ng test --browsers ChromeHeadless --reporters spec",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "release": "standard-version && git push --follow-tags origin master"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/jiayisheji/ng4-admin-pro.git"
@@ -53,6 +61,8 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.2.0",
+    "concurrently": "^3.5.1",
+    "ghooks": "^2.0.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
@@ -61,13 +71,15 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "mockjs": "^1.0.1-beta3",
+    "nodemon": "^1.14.12",
+    "pre-commit": "^1.2.2",
     "protractor": "~5.1.2",
+    "standard-version": "^4.2.0",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.3.3",
-    "validate-commit-msg": "^2.14.0",
-    "ghooks": "^2.0.0",
-    "standard-version": "^4.2.0"
+    "validate-commit-msg": "^2.14.0"
   },
   "config": {
     "ghooks": {

@@ -80,3 +80,29 @@ npm start // 默认浏览器自动访问 http://localhost:9090
 - 在你的公司或个人项目中使用 Ng4 Admin Pro。
 - 通过 [Issue](https://github.com/jiayisheji/ng4-admin-pro/issues) 报告 bug 或进行咨询。
 - 提交 [Pull Request](https://github.com/jiayisheji/ng4-admin-pro/pulls) 改进 Pro 的代码
+
+## 预期UI组件
+- [ ] Dialog 对话框组件
+- [ ] Tabs 选标签页组件
+- [ ] Select 选择器组件（单/多）
+- [ ] Table 复杂表格组件
+- [ ] Confirm 确认框组件
+- [ ] Pagination 分页组件
+- [ ] Button 按钮组件
+- [ ] Upload 上传组件
+- [ ] Badge 徽标数组件
+- [ ] Status 状态点组件
+- [ ] AreaPocker 地区选择组件（单/多）
+- [ ] TimePicker 时间选择组件（单/双）
+- [ ] DatePicker 日期时间选择组件（单/双）
+- [ ] UrbanPicker 地址选择组件
+- [ ] RadioGroup 单选组件
+- [ ] CheckboxGroup 多选组件
+- [ ] PicturePreview 图片预览组件
+- [ ] Toast 消息提醒组件
+- [ ] Tree 树型组件
+- [ ] InputNumber 数字输入组件
+- [ ] Popover 气泡卡片组件
+- [ ] Tooltip 文字提示组件
+- [ ] Spin 加载中组件
+- [ ] BackTop 回到顶部组件
