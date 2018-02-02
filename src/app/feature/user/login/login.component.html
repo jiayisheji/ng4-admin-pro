@@ -1,14 +1,41 @@
-<p>
-  login works!
-</p>
-
-
-<div>
-  <input type="text" name="" id="" placeholder="admin">
-</div>
-<div>
-  <input type="password" name="" id="" placeholder="123456">
-</div>
-<div>
-  <button (click)="login()">提交</button>
-</div>
+<form sim-form [formGroup]="loginValidateForm" novalidate (ngSubmit)="save($event, loginValidateForm)">
+  <sim-form-item>
+    <ng-template #control>
+      <div sim-form-item-control hasFeedback="true">
+        <sim-input formControlName="username" placeHolder="用户名 admin/user" size="lg">
+          <ng-template #prefix>
+            <i class="icon-user"></i>
+          </ng-template>
+        </sim-input>
+        <sim-form-explain *ngIf="loginValidateForm.controls.username.dirty">
+          <ng-container *ngIf="loginValidateForm.controls.username.hasError('required')">
+            请输入登录名！
+          </ng-container>
+          <ng-container *ngIf="loginValidateForm.controls.username.hasError('minlength') || loginValidateForm.controls.username.hasError('maxlength')">
+            登录名长度2-20之间
+          </ng-container>
+        </sim-form-explain>
+      </div>
+    </ng-template>
+  </sim-form-item>
+  <sim-form-item>
+    <ng-template #control>
+      <div sim-form-item-control hasFeedback="true">
+        <sim-input type="password" formControlName="password" placeHolder="密码 888888/123456" size="lg">
+          <ng-template #prefix>
+            <i class="icon-lock"></i>
+          </ng-template>
+        </sim-input>
+        <sim-form-explain *ngIf="loginValidateForm.controls.password.dirty">
+          <ng-container *ngIf="loginValidateForm.controls.password.hasError('required')">
+            请输入密码！
+          </ng-container>
+          <ng-container *ngIf="loginValidateForm.controls.password.hasError('minlength') || loginValidateForm.controls.password.hasError('maxlength')">
+            密码长度6-32之间
+          </ng-container>
+        </sim-form-explain>
+      </div>
+    </ng-template>
+  </sim-form-item>
+  <button type="submit" sim-button color="primary" shape="block" [disabled]="loading">登录</button>
+</form>
