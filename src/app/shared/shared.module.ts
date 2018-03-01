@@ -4,6 +4,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { getNavData } from '@app/config';
 
@@ -25,6 +26,8 @@ import { BreadcrumbModule } from './breadcrumb';
     CommonModule,
     RouterModule,
     FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     SimpleModule.forRoot(),
     BreadcrumbModule.forRoot(getNavData),
   ],
@@ -36,6 +39,8 @@ import { BreadcrumbModule } from './breadcrumb';
     FlexLayoutModule,
     SimpleModule,
     BreadcrumbModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class SharedModule { }
