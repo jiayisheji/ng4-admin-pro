@@ -7,8 +7,6 @@ import { HeaderComponent } from './header.component';
 import { FooterComponent } from './footer.component';
 import { ContentComponent } from './content.component';
 import { HeaderTopbarComponent } from './header-topbar/header-topbar.component';
-import { HeaderMenuComponent } from './header-menu/header-menu.component';
-import { SiderMenuComponent } from './sider-menu/sider-menu.component';
 
 @NgModule({
     imports: [
@@ -22,8 +20,6 @@ import { SiderMenuComponent } from './sider-menu/sider-menu.component';
         FooterComponent,
         ContentComponent,
         HeaderTopbarComponent,
-        HeaderMenuComponent,
-        SiderMenuComponent
     ],
     providers: [],
 })
