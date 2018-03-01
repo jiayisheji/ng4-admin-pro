@@ -1,1 +1,17 @@
-<ng-content></ng-content>
+<ng-container *ngIf="main && extra">
+    <div class="sim-list-item-extra-wrap">
+        <div class="sim-list-item-main">
+            <ng-container [ngTemplateOutlet]="main"></ng-container>
+        </div>
+        <div class="sim-list-item-extra">
+            <ng-container [ngTemplateOutlet]="extra"></ng-container>
+        </div>
+    </div>    
+</ng-container>
+<ng-container *ngIf="main && !extra">
+    <ng-container [ngTemplateOutlet]="main"></ng-container>
+</ng-container>
+<ng-container *ngIf="!main && !extra">
+    <ng-content></ng-content>
+</ng-container>
+

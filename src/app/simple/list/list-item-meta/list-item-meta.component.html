@@ -1,0 +1,11 @@
+<div class="sim-list-item-meta-avatar" *ngIf="avatar">
+  <ng-container [ngTemplateOutlet]="avatar"></ng-container>
+</div>
+<div class="sim-list-item-meta-content">
+  <h4 class="sim-list-item-meta-title">
+    <ng-container [ngTemplateOutlet]="title"></ng-container>
+  </h4>
+  <div class="sim-list-item-meta-description">
+    <ng-container [ngTemplateOutlet]="description"></ng-container>
+  </div>
+</div>

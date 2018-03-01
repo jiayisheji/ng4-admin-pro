@@ -1,4 +1,5 @@
 import { Component, OnInit, HostBinding, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { ActionComponent } from '../action/action.component';
 
 interface IActions {
   name: string;
@@ -20,33 +21,22 @@ interface IActions {
 })
 export class ListItemActionComponent implements OnInit {
   @HostBinding('class.sim-list-item-action') true;
-  _Actions: Array<IActions> = [];
-  _ActionsShow: Array<IActions> = [];
-  _ActionsHide: Array<IActions> = [];
-  @Input()
-  get actions(): Array<IActions> {
-    return this._Actions;
-  }
-  set actions(value: Array<IActions>) {
-    if (!value) {
-      this._Actions = [];
-    } else {
-      this._Actions = value;
-    }
-    if (this._Actions.length) {
-      this._ActionsShow = this._filterActions(this._Actions).filter((item: IActions) => item.show);
-      this._ActionsHide = this._filterActions(this._Actions).filter((item: IActions) => !item.show);
-    }
-  }
-  @Output() onChange: EventEmitter<string> = new EventEmitter();
+  _Actions: Array<ActionComponent> = [];
+  _ActionsShow: Array<ActionComponent> = [];
+  _ActionsHide: Array<ActionComponent> = [];
+  @Input() split: boolean;
   constructor() { }
 
   ngOnInit() {
   }
 
-  buttonEvent(type: string) {
-    this.onChange.emit(type);
-    return false;
+  addAction(action: ActionComponent) {
+    this._Actions.push(action);
+    console.log(this._Actions);
+  }
+
+  removeAction(action: ActionComponent) {
+
   }
 
   /**

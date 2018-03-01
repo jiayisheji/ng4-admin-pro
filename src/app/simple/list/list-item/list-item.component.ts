@@ -1,4 +1,4 @@
-import { Component, OnInit, Optional, ViewEncapsulation, ChangeDetectionStrategy, HostBinding } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, HostBinding, ContentChild, TemplateRef } from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -10,7 +10,15 @@ import { Component, OnInit, Optional, ViewEncapsulation, ChangeDetectionStrategy
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListItemComponent implements OnInit {
-  @HostBinding('class.sim-list-item') _simListItem = true;
+  @HostBinding('class.sim-list-item') true;
+  @HostBinding('attr.role')
+  get _setListRole() {
+    return 'listitem';
+  }
+  // 列表元素的图标
+  @ContentChild('main') main: TemplateRef<void>;
+  // 列表元素的图标
+  @ContentChild('extra') extra: TemplateRef<void>;
   constructor() { }
 
   ngOnInit() {
