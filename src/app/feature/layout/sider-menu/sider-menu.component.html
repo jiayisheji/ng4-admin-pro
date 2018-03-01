@@ -1,0 +1,79 @@
+<ul sim-menu [mode]="'inline'" class="menu-dark" [inlineCollapsed]="_collapsed">
+  <ng-container *ngFor="let m of items">
+    <!-- 如果有菜单 -->
+    <ng-container *ngIf="m.children">
+      <li sim-sub-menu *ngIf="m.children" routerLinkActive="menu-submenu-selected" [onOpen]="m._fold" (onOpenChange)="openChange($event, m, items)">
+        <span menu-title>
+          <i class="menu-icon icon-{{m.icon}}"></i>
+          <span>{{m.name}}</span>
+        </span>
+        <!-- 显示子菜单 -->
+        <ng-container *ngFor="let n of m.children">
+          <!-- 如果有菜单 -->
+          <ng-container *ngIf="n.children">
+            <li sim-sub-menu routerLinkActive="menu-submenu-selected" [onOpen]="n._fold" (onOpenChange)="openChange($event, n, m.children)">
+              <span menu-title>
+                <i class="menu-icon icon-{{n.icon}}" *ngIf="n.icon"></i>
+                <span>{{n.name}}</span>
+              </span>
+              <!-- 显示子菜单 -->
+              <ng-container *ngFor="let k of n.children">
+                <!-- 如果没有子菜单 -->
+                <ng-container *ngIf="!k.children">
+                  <li sim-menu-item role="menuitem" routerLinkActive="menu-item-selected">
+                    <ng-container *ngIf="!k.target">
+                      <a [routerLink]="['/', m.path, n.path, k.path]">
+                        <i class="menu-icon icon-{{k.icon}}" *ngIf="k.icon"></i>
+                        <span>{{k.name}}</span>
+                      </a>
+                    </ng-container>
+                    <ng-container *ngIf="k.target">
+                      <a [href]="k.path" [target]="k.target">
+                        <i class="menu-icon icon-{{k.icon}}" *ngIf="k.icon"></i>
+                        <span>{{k.name}}</span>
+                      </a>
+                    </ng-container>
+                  </li>
+                </ng-container>
+              </ng-container>
+            </li>
+          </ng-container>
+          <!-- 如果没有子菜单 -->
+          <ng-container *ngIf="!n.children">
+            <li sim-menu-item role="menuitem" routerLinkActive="menu-item-selected">
+              <ng-container *ngIf="!n.target">
+                <a [routerLink]="['/', m.path, n.path]">
+                  <i class="menu-icon icon-{{n.icon}}" *ngIf="n.icon"></i>
+                  <span>{{n.name}}</span>
+                </a>
+              </ng-container>
+              <ng-container *ngIf="n.target">
+                <a [href]="n.path" [target]="n.target">
+                  <i class="menu-icon icon-{{n.icon}}" *ngIf="n.icon"></i>
+                  <span>{{n.name}}</span>
+                </a>
+              </ng-container>
+            </li>
+          </ng-container>
+        </ng-container>
+      </li>
+    </ng-container>
+    <!-- 如果没有子菜单 -->
+    <ng-container *ngIf="!m.children">
+      <li sim-menu-item role="menuitem" routerLinkActive="menu-item-selected">
+        <ng-container *ngIf="!m.target">
+          <a [routerLink]="['/', m.path]">
+            <i class="menu-icon icon-{{m.icon}}" *ngIf="m.icon"></i>
+            <span>{{m.name}}</span>
+          </a>
+        </ng-container>
+        <ng-container *ngIf="m.target">
+          <a [href]="m.path" [target]="m.target">
+            <i class="menu-icon icon-{{m.icon}}" *ngIf="m.icon"></i>
+            <span>{{m.name}}</span>
+          </a>
+        </ng-container>
+      </li>
+    </ng-container>
+  </ng-container>
+</ul>
