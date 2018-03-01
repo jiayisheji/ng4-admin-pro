@@ -1,0 +1,7 @@
+<div class="sim-form-item-label" [fxFlex]="labelFlex" *ngIf="label">
+  <ng-container [ngTemplateOutlet]="label"></ng-container>
+</div>
+<div class="sim-form-item-control-wrapper" fxFlex="auto" *ngIf="control">
+  <ng-container [ngTemplateOutlet]="control"></ng-container>
+</div>
+<ng-content></ng-content>
