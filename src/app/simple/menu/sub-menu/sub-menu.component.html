@@ -1,7 +1,26 @@
-<div class="menu-submenu-title" (mouseenter)="onMouseEnterEvent($event)" (mouseleave)="onMouseLeaveEvent($event)" (click)="clickSubMenuTitle()" [style.paddingLeft.px]="(menu.mode === 'inline')?(level*24):null">
-    <ng-content select="[title]"></ng-content>
+<div 
+    [class.dropdown-menu-submenu-title]="isInDropDown"
+    [class.menu-submenu-title]="!isInDropDown"
+    (mouseenter)="onMouseEnterEvent($event)" 
+    (mouseleave)="onMouseLeaveEvent($event)" 
+    (click)="clickSubMenuTitle()" 
+    [style.paddingLeft.px]="(menu.mode === 'inline')?(level*24):null">
+    <ng-content select="[menu-title]"></ng-content>
     <i class="menu-submenu-arrow"></i>
 </div>
-<ul class="m-menu menu-sub" [@fadeAnimation] [@expandAnimation]="expandState" (mouseleave)="onMouseLeaveEvent($event)" (mouseenter)="onMouseEnterEvent($event)" *ngIf="open">
+<ul 
+    [class.dropdown-menu]="isInDropDown"
+    [class.dropdown-menu-sub]="isInDropDown"
+    [class.dropdown-menu-vertical]="isInDropDown"
+    [class.menu-vertical]="(!isInDropDown)&&(menu.mode!=='inline')"
+    [class.menu-inline]="(!isInDropDown)&&(menu.mode==='inline')"
+    [class.sim-menu]="!isInDropDown"
+    [class.menu-sub]="!isInDropDown"
+    [@expandAnimation]="expandState" 
+    (mouseleave)="onMouseLeaveEvent($event)" 
+    (mouseenter)="onMouseEnterEvent($event)" 
+    (click)="clickSubMenuDropDown()"
+    [@expandAnimation]="expandState"
+    *ngIf="onOpen">
     <ng-content></ng-content>
 </ul>

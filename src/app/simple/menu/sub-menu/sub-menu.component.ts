@@ -8,12 +8,12 @@ import {
   AfterViewInit,
   HostBinding,
   Output,
-  EventEmitter
+  EventEmitter,
+  HostListener
 } from '@angular/core';
 import { trigger, transition, state, style, animate } from '@angular/animations';
 import { MenuComponent } from '../menu.component';
 import { Subject } from 'rxjs/Subject';
-
 import { debounceTime } from 'rxjs/operator/debounceTime';
 @Component({
   // tslint:disable-next-line:component-selector
@@ -22,17 +22,8 @@ import { debounceTime } from 'rxjs/operator/debounceTime';
   styleUrls: ['./sub-menu.component.scss'],
   encapsulation: ViewEncapsulation.None,
   animations: [
-    trigger('fadeAnimation', [
-      state('*', style({ opacity: 1 })),
-      transition('* => void', [
-        animate(150, style({ opacity: 0, display: 'none' }))
-      ]),
-      transition('void => *', [
-        style({ opacity: '0' }),
-        animate(150, style({ opacity: 1 }))
-      ])
-    ]),
     trigger('expandAnimation', [
+      state('fade', style({ opacity: 1 })),
       transition('expand => void', [
         style({ height: '*', overflow: 'hidden' }),
         animate(150, style({ height: 0 }))
@@ -40,11 +31,20 @@ import { debounceTime } from 'rxjs/operator/debounceTime';
       transition('void => expand', [
         style({ height: 0, overflow: 'hidden' }),
         animate(150, style({ height: '*' }))
+      ]),
+      transition('fade => void', [
+        animate(150, style({ opacity: 0 }))
+      ]),
+      transition('void => fade', [
+        style({ opacity: '0' }),
+        animate(150, style({ opacity: 1 }))
       ])
     ])
   ],
 })
 export class SubMenuComponent implements OnInit, OnDestroy, AfterViewInit {
+  private _open = false;
+  isInDropDown = false;
   level = 1;
 
   $mouseSubject = new Subject();
@@ -52,57 +52,99 @@ export class SubMenuComponent implements OnInit, OnDestroy, AfterViewInit {
   // 获取子菜单集合
   @ContentChildren(SubMenuComponent) subMenus;
 
-  @Input() open = false;
+  @Input()
+  @Input()
+  set onOpen(value: boolean) {
+    this._open = Boolean(value);
+  }
+
+  get onOpen(): boolean {
+    return this._open;
+  }
 
   @Output() onOpenChange: EventEmitter<boolean> = new EventEmitter();
 
+  // 获取子菜单项是否选中
+  get subItemSelected(): boolean {
+    return !!this.menu.menuItems.find(e => e.nzSelected && e.nzSubMenuComponent === this);
+  }
+  // 获取子菜单是否选中
+  get submenuSelected(): boolean {
+    return !!this.subMenus._results.find(e => e !== this && e.subItemSelected);
+  }
 
   /**
    * 动画状态
    */
   get expandState() {
-    if (this.open && this.menu.mode !== 'vertical') {
+    if (this.onOpen && this.menu.mode === 'inline') {
       return 'expand';
+    } else if (this.onOpen && this.menu.mode !== 'inline') {
+      return 'fade';
     }
     return null;
   }
 
+
   /**
    * 绑定类
    */
-  @HostBinding('class.menu-submenu')
-  get _setSubMenuClass() {
-    return true;
+  @HostBinding('class.dropdown-menu-submenu')
+  get setDropDownSubmenuClass(): boolean {
+    return this.isInDropDown;
   }
 
   @HostBinding('class.menu-submenu-open')
-  get _setMenuSubmenuOpenClass() {
-    return this.open;
+  get setMenuSubmenuOpenClass(): boolean {
+    return (!this.isInDropDown) && (this.onOpen);
+  }
+
+  @HostBinding('class.dropdown-menu-submenu-vertical')
+  get setDropDownVerticalClass(): boolean {
+    return this.isInDropDown && (this.menu.mode === 'vertical');
+  }
+
+  @HostBinding('class.dropdown-menu-submenu-horizontal')
+  get setDropDownHorizontalClass(): boolean {
+    return this.isInDropDown && (this.menu.mode === 'horizontal');
+  }
+
+  @HostBinding('class.menu-submenu')
+  get setMenuSubmenuClass(): boolean {
+    return !this.isInDropDown;
+  }
+
+  @HostBinding('class.menu-submenu-selected')
+  get setMenuSubmenuSelectedClass(): boolean {
+    return this.submenuSelected || this.subItemSelected;
   }
 
   @HostBinding('class.menu-submenu-vertical')
   get _setMenuVerticalClass() {
-    return this.menu.mode === 'vertical';
+    return (!this.isInDropDown) && (this.menu.mode === 'vertical');
   }
 
   @HostBinding('class.menu-submenu-horizontal')
   get _setMenuHorizontalClass() {
-    return this.menu.mode === 'horizontal';
+    return (!this.isInDropDown) && (this.menu.mode === 'horizontal');
   }
 
   @HostBinding('class.menu-submenu-inline')
   get _setMenuInlineClass() {
-    return this.menu.mode === 'inline';
+    return (!this.isInDropDown) && (this.menu.mode === 'inline');
   }
 
-  constructor(private menu: MenuComponent) {
+  constructor(public menu: MenuComponent) {
     this.menu.setHasSubMenu(true);
     this.menu.subMenus.push(this);
   }
 
   ngOnInit() {
     debounceTime.call(this.$mouseSubject, 300).subscribe((data: boolean) => {
-      this.open = data;
+      if (this.onOpen !== data) {
+        this.onOpen = data;
+        this.onOpenChange.emit(this.onOpen);
+      }
     });
   }
 
@@ -114,6 +156,7 @@ export class SubMenuComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    this.isInDropDown = this.menu.isInDropDown;
     if (this.subMenus.length && (this.menu.mode === 'inline')) {
       this.subMenus.filter(x => x !== this).forEach(menu => {
         setTimeout(_ => {
@@ -131,23 +174,33 @@ export class SubMenuComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.menu.mode === 'vertical') {
       return;
     }
-    this.open = !this.open;
+    this.onOpen = !this.onOpen;
     // 发射出去给父组件使用
-    this.onOpenChange.emit(this.open);
+    this.onOpenChange.emit(this.onOpen);
+  }
+
+  clickSubMenuDropDown(): void {
+    if (this.isInDropDown || (this.menu.mode === 'vertical') || (this.menu.mode === 'horizontal')) {
+      this.$mouseSubject.next(false);
+      this.onOpen = false;
+      this.onOpenChange.emit(this.onOpen);
+    }
   }
 
   // 鼠标离开
-  onMouseLeaveEvent() {
+  @HostListener('mouseleave', ['$event'])
+  onMouseLeaveEvent(event) {
     // 只有在菜单收起时才能使用鼠标离开
-    if ((this.menu.mode === 'horizontal') || (this.menu.mode === 'vertical')) {
+    if ((this.menu.mode === 'horizontal') || (this.menu.mode === 'vertical') || this.isInDropDown) {
       this.$mouseSubject.next(false);
     }
   }
 
   // 鼠标移入
-  onMouseEnterEvent() {
+  @HostListener('mouseenter', ['$event'])
+  onMouseEnterEvent(event) {
     // 只有在菜单收起时才能使用鼠标移入
-    if ((this.menu.mode === 'horizontal') || (this.menu.mode === 'vertical')) {
+    if ((this.menu.mode === 'horizontal') || (this.menu.mode === 'vertical') || this.isInDropDown) {
       this.$mouseSubject.next(true);
     }
   }
