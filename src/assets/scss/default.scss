@@ -1,0 +1,152 @@
+
+// 基础字体
+$font-family-base: "Helvetica Neue For Number",
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"PingFang SC",
+"Hiragino Sans GB",
+"Microsoft YaHei",
+"Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
+
+$font-family-icon: "jiayiicon";
+
+// 字号行号对应表
+// 68px/1.13 => 76px
+// 56px/1.14 => 64px
+// 46px/1.17 => 54px
+// 38px/1.21 => 46px
+// 30px/1.26 => 38px
+// 24px/1.33 => 32px
+// 20px/1.4  => 28px
+// 16px/1.5  => 24px
+// 14px/1.57 => 22px
+// 12px/1.67 => 20px
+// 基础字号
+$font-size-base : 14px;
+// 基础行高
+$line-height-base : 1.57;
+// 基础圆角
+$border-radius-base : 4px;
+$border-radius-sm: 2px;
+$border-radius-lg: 6px;
+// xl 超大
+// lg 大
+// md 中等（默认）
+// sm 小
+// xs 超小
+$font-size-xs: 12px;
+$line-height-xs: 1.67;
+$font-size-sm: $font-size-base;
+$line-height-sm: $line-height-base;
+$font-size-md: 16px;
+$line-height-md: 1.5;
+$font-size-lg: 20px;
+$line-height-lg: 1.4;
+$font-size-xl: 24px;
+$line-height-xl: 1.33;
+
+// 超大字体
+$font-size-h1: 68px;
+$line-height-h1: 1.13;
+$font-size-h2: 56px;
+$line-height-h2: 1.14;
+$font-size-h3: 46px;
+$line-height-h3: 1.17;
+$font-size-h4: 38px;
+$line-height-h4: 1.21;
+$font-size-h5: 30px;
+$line-height-h5: 1.26;
+$font-size-h6: 16px;
+$line-height-h6: 1.5;
+
+
+// -------- Colors -----------
+
+// 'default' | 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'link' | 'info'
+// 字体颜色
+$primary-color: #1890ff;
+$info-color: #91d5ff;
+$success-color: #52c41a;
+$danger-color: #f5222d;
+$secondary-color: #666;
+$warning-color: #faad14;
+$normal-color : #999;
+$link-color: #1890ff;
+$default-color: #fff;
+// 边框颜色
+$default-border-color: #d9d9d9;
+// 背景颜色
+$default-background-color: #fff;
+// input阴影
+$default-input-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+
+// 主标题 加粗
+$title-weight: 700;
+// 副标题 加中粗
+$subtitle-weight: 400;
+// 正文 不加粗
+$text-weight: normal;
+// 主标题字体颜色
+$title-color: #2b2b2b;
+// 副标题字体颜色
+$subtitle-color: #666;
+// 正文字体颜色
+$text-color: #737373;
+
+
+// 圆圈按钮 宽高
+$btn-circle-xl: floor($font-size-xl * $line-height-xl+26);
+$btn-circle-lg: floor($font-size-lg * $line-height-lg+18);
+$btn-circle-md: floor($font-size-md * $line-height-md+14);
+$btn-circle-sm: floor($font-size-sm * $line-height-sm+10);
+$btn-circle-xs: floor($font-size-xs * $line-height-xs + 2);
+
+// 按钮填充
+$btn-padding-xs: 0 8px;
+$btn-padding-sm: 4px 16px;
+$btn-padding-md: 6px 20px;
+$btn-padding-lg: 8px 26px;
+$btn-padding-xl: 12px 32px;
+
+// 按钮颜色
+$btn-default-color: $normal-color;
+$btn-default-bg: $default-border-color;
+$btn-default-border: $default-border-color;
+
+$btn-primary-color: $default-color;
+$btn-primary-bg: $primary-color;
+$btn-primary-border: $primary-color;
+
+$btn-secondary-color: $default-color;
+$btn-secondary-bg: $secondary-color;
+$btn-secondary-border: $secondary-color;
+
+$btn-success-color: $default-color;
+$btn-success-bg: $success-color;
+$btn-success-border: $success-color;
+
+$btn-danger-color: $default-color;
+$btn-danger-bg: $danger-color;
+$btn-danger-border: $danger-color;
+
+$btn-warning-color: $default-color;
+$btn-warning-bg: $warning-color;
+$btn-warning-border: $warning-color;
+
+$btn-info-color: $default-color;
+$btn-info-bg: $info-color;
+$btn-info-border: $info-color;
+
+// 输入框高度，Input Select DatePicker
+$input-padding-lg: 6px 11px;
+
+$input-height-xl: 40px;
+$input-height-lg: 40px;
+$input-height-md: 40px;
+$input-height-sm: 40px;
+$input-height-xs: 40px;
