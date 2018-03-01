@@ -1,0 +1,5 @@
+<span class="badge-status-dot badge-status-{{status}}" *ngIf="status" [ngStyle]="_statusSize"></span><ng-template *ngIf="content" [ngTemplateOutlet]="content"></ng-template>
+<sup *ngIf="_count !== undefined" [ngStyle]="simStyle" [class.badge-count]="_count !== null" [class.badge-blink]="blink" [class.badge-dot]="_count === null">
+  <ng-template [ngIf]="count<=overflowCount">{{ count }}</ng-template>
+  <ng-template [ngIf]="count>overflowCount">{{ overflowCount }}+</ng-template>
+</sup>
