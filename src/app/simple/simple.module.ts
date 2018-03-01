@@ -11,6 +11,8 @@ import { SpinnerModule } from './spinner';
 import { ListModule } from './list';
 import { AvatarModule } from './avatar';
 import { BadgeModule } from './badge';
+import { FormModule } from './form';
+import { InputModule } from './input';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { BadgeModule } from './badge';
         SpinnerModule,
         ListModule,
         AvatarModule,
-        BadgeModule
+        BadgeModule,
+        FormModule,
+        InputModule,
     ]
 })
 export class SimpleModule {
