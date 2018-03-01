@@ -13,15 +13,6 @@
 - size 参数：字符串，默认default。 尺寸 'default' | 'lg' | 'md' | 'sm' | 'xs'
 - shape 参数：字符串，默认default。形状 'default' | 'outline' | 'dashed' | 'pill'
 
-## Directives 【指令】
-### ButtonBlockDirective 【块级按钮】
-
-#### Selector(选择器)：[simButtonBlock],[sim-button-block]
-
-### ButtonPillDirective 【胶囊按钮】
-
-#### Selector(选择器)：[simButtonPill],[sim-button-pill]
-
 ```html
 <h2>color</h2>
 <div>

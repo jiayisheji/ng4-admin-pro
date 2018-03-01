@@ -1,216 +1,188 @@
+@import '../../../assets/scss/default.scss';
+@import '../../../assets/scss/mixins/_buttons.scss';
 .sim-btn {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  background: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.5;
-  border-radius: 4px;
-  user-select: none;
-  transition: all .1s ease-in;
-  &[disabled],
-  &.disabled {
-    cursor: not-allowed;
-    box-shadow: none;
-    opacity: 0.65;
-  }
-  &:active,
-  &.active {
-    box-shadow: rgba(0, 0, 0, 0.125) 0px 3px 5px inset;
-    outline: 0;
-  }
-  &:hover:focus,
-  &:focus {
-    outline: 0;
-  }
-  &-dashed {
-    color: rgba(0, 0, 0, 0.65);
-    background-color: #fff;
-    border-color: #d9d9d9;
-    border-style: dashed;
-    &.sim-btn-default {
-      color: rgba(0, 0, 0, 0.65);
-      border-color: #d9d9d9;
-      background-color: #fff;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    font-family: $font-family-base;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    user-select: none;
+    transition: all .1s ease-in;
+    &:before {
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        bottom: -1px;
+        right: -1px;
+        background: #fff;
+        opacity: .35;
+        content: "";
+        border-radius: inherit;
+        z-index: 1;
+        transition: opacity .2s;
+        pointer-events: none;
+        display: none;
     }
-    &.sim-btn-primary {
-      &:hover {
-        color: #3194d0;
-        border-color: #3194d0;
-        background-color: #fff;
-      }
+    .icon-loading {
+        transition: margin-left .3s cubic-bezier(.645, .045, .355, 1);
+        &+span{
+            margin-left: .5em;
+        }
     }
-    &.sim-btn-secondary {
-      &:hover {
-        color: #868e96;
-        border-color: #868e96;
-        background-color: #fff;
-      }
+
+    &-loading:before {
+        display: block;
     }
-    &.sim-btn-info {
-      &:hover {
-        color: #5bc0de;
-        border-color: #5bc0de;
-        background-color: #fff;
-      }
+
+    &-loading:not(.sim-btn-dashed):not(.sim-btn-outline){
+        padding-left: 29px;
+        pointer-events: none;
+        position: relative;
+        .icon-loading{
+            margin-left: -14px;
+        }
     }
-    &.sim-btn-warning {
-      &:hover {
-        color: #f0ad4e;
-        border-color: #f0ad4e;
-        background-color: #fff;
-      }
+    &-dashed {
+        border-style: dashed;
+        &.sim-btn-default {
+            @include button-variant-dashed($btn-default-color, $default-background-color, $default-border-color);
+        }
+        &.sim-btn-primary {
+            @include button-variant-dashed($primary-color, $default-background-color, $default-border-color);
+        }
+        &.sim-btn-secondary {
+            @include button-variant-dashed($secondary-color, $default-background-color, $default-border-color);
+        }
+        &.sim-btn-info {
+            @include button-variant-dashed($info-color, $default-background-color, $default-border-color);
+        }
+        &.sim-btn-warning {
+            @include button-variant-dashed($warning-color, $default-background-color, $default-border-color);
+        }
+        &.sim-btn-success {
+            @include button-variant-dashed($success-color, $default-background-color, $default-border-color);
+        }
+        &.sim-btn-danger {
+            @include button-variant-dashed($danger-color, $default-background-color, $default-border-color);
+        }
     }
-    &.sim-btn-success {
-      &:hover {
-        color: #42c02e;
-        border-color: #42c02e;
-        background-color: #fff;
-      }
+    &-outline {
+        &.sim-btn-default {
+            @include button-variant-outline($btn-default-color, $default-background-color, $default-border-color);
+        }
+        &.sim-btn-primary {
+            @include button-variant-outline($primary-color, $default-background-color, $default-border-color);
+        }
+        &.sim-btn-secondary {
+            @include button-variant-outline($secondary-color, $default-background-color, $default-border-color);
+        }
+        &.sim-btn-info {
+            @include button-variant-outline($info-color, $default-background-color, $default-border-color);
+        }
+        &.sim-btn-warning {
+            @include button-variant-outline($warning-color, $default-background-color, $default-border-color);
+        }
+        &.sim-btn-success {
+            @include button-variant-outline($success-color, $default-background-color, $default-border-color);
+        }
+        &.sim-btn-danger {
+            @include button-variant-outline($danger-color, $default-background-color, $default-border-color);
+        }
     }
-    &.sim-btn-danger {
-      &:hover {
-        color: #ea6f5a;
-        border-color: #ea6f5a;
-        background-color: #fff;
-      }
+    &-default {
+        @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
     }
-  }
-  &-outline {
-    &.sim-btn-default {
-      color: rgba(0, 0, 0, 0.65);
-      border-color: #d9d9d9;
-      background-color: #fff;
+    &-primary{
+        @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
     }
-    &.sim-btn-primary {
-      color: #3194d0;
-      border-color: #3194d0;
-      background-color: #fff;
+    &-secondary{
+        @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
     }
-    &.sim-btn-secondary {
-      color: #868e96;
-      border-color: #868e96;
-      background-color: #fff;
+    &-info{
+        @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
     }
-    &.sim-btn-info {
-      color: #5bc0de;
-      border-color: #5bc0de;
-      background-color: #fff;
+    &-warning {
+        @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
     }
-    &.sim-btn-warning {
-      color: #f0ad4e;
-      border-color: #f0ad4e;
-      background-color: #fff;
+    &-success {
+        @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
     }
-    &.sim-btn-success {
-      color: #42c02e;
-      border-color: #42c02e;
-      background-color: #fff;
+    &-danger {
+        @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
     }
-    &.sim-btn-danger {
-      color: #ea6f5a;
-      border-color: #ea6f5a;
-      background-color: #fff;
+    &-link {
+        @include button-variant-link($link-color);
     }
-  }
-  &-default {
-    color: inherit;
-    &:hover {
-      color: #212529;
-      border: 1px solid #e2e6ea;
-      background-color: #e2e6ea;
+    &-block {
+        display: block;
+        width: 100%;
     }
-  }
-  &-primary:not(.sim-btn-dashed) {
-    color: #fff;
-    background-color: #3194d0;
-    &:hover {
-      color: #fff;
-      border: 1px solid #187cb7;
-      background-color: #187cb7;
+    &-xl {
+        @include button-size($btn-padding-xl, $font-size-xl, $line-height-xl, $border-radius-lg);
     }
-  }
-  &-secondary:not(.sim-btn-dashed) {
-    color: #fff;
-    background-color: #868e96;
-    &:hover {
-      color: #fff;
-      border: 1px solid #727b84;
-      background-color: #727b84;
+    &-lg {
+        @include button-size($btn-padding-lg, $font-size-lg, $line-height-lg, $border-radius-base);
     }
-  }
-  &-info:not(.sim-btn-dashed) {
-    color: #fff;
-    background-color: #5bc0de;
-    &:hover {
-      color: #fff;
-      background-color: #31b0d5;
-      border: 1px solid #31b0d5;
+    &-md {
+        @include button-size($btn-padding-md, $font-size-md, $line-height-md, $border-radius-base);
     }
-  }
-  &-warning:not(.sim-btn-dashed) {
-    color: #fff;
-    background-color: #f0ad4e;
-    &:hover {
-      color: #fff;
-      background-color: #ec971f;
-      border: 1px solid #ec971f;
+    &-sm {
+        @include button-size($btn-padding-sm, $font-size-sm, $line-height-sm, $border-radius-base);
     }
-  }
-  &-success:not(.sim-btn-dashed) {
-    color: #fff;
-    background-color: #42c02e;
-    &:hover {
-      color: #fff;
-      background-color: #3db922;
-      border: 1px solid #3db922;
+    &-xs {
+        @include button-size($btn-padding-xs, $font-size-xs, $line-height-xs, $border-radius-sm);
     }
-  }
-  &-danger:not(.sim-btn-dashed) {
-    color: #fff;
-    background-color: #ea6f5a;
-    &:hover {
-      color: #fff;
-      background-color: #ec6149;
-      border: 1px solid #ec6149;
+    &-pill {
+        border-radius: 10rem;
     }
-  }
-  &-link {
-    color: #3194d0;
-    padding: 0 5px;
-    border-radius: 0px;
-    &.disable {
-      pointer-events: none;
+    &-circle {
+        padding: 0;
+        overflow: hidden;
+        &.sim-btn {
+            &-xl {
+                @include button-size-circle($btn-circle-xl, 50%);
+            }
+            &-lg {
+                @include button-size-circle($btn-circle-lg, 50%);
+            }
+            &-md {
+                @include button-size-circle($btn-circle-md, 50%);
+            }
+            &-sm {
+                @include button-size-circle($btn-circle-sm, 50%);
+            }
+            &-xs {
+                @include button-size-circle($btn-circle-xs, 50%);
+            }
+        }
     }
-    &:hover {
-      color: #23527c;
-      background-color: transparent;
+
+    &-square {
+        padding: 0;
+        overflow: hidden;
+        &.sim-btn {
+            &-xl {
+                @include button-size-circle($btn-circle-xl, $border-radius-lg);
+            }
+            &-lg {
+                @include button-size-circle($btn-circle-lg, $border-radius-base);
+            }
+            &-md {
+                @include button-size-circle($btn-circle-md, $border-radius-base);
+            }
+            &-sm {
+                @include button-size-circle($btn-circle-sm, $border-radius-base);
+            }
+            &-xs {
+                @include button-size-circle($btn-circle-xs, $border-radius-sm);
+            }
+        }
     }
-  }
-  &-block {
-    display: block;
-    width: 100%;
-  }
-  &-lg {
-    padding: 9px 25px;
-    font-size: 18px;
-  }
-  &-sm {
-    font-size: 12px;
-    padding: 4px 10px;
-  }
-  &-xs {
-    padding: 0 8px;
-    font-size: 12px;
-  }
-  &-pill {
-    border-radius: 10rem;
-  }
 }
