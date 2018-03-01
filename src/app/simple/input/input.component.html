@@ -1,0 +1,21 @@
+<span class="sim-input-group-addon" *ngIf="_addOnContentBefore">
+  <ng-template [ngTemplateOutlet]="_addOnContentBefore"></ng-template>
+</span>
+<span class="sim-input-prefix" *ngIf="_prefixContent">
+  <ng-template [ngTemplateOutlet]="_prefixContent"></ng-template>
+</span>
+<ng-template [ngIf]="type!='textarea'">
+    <input (blur)="_emitBlur($event)" (focus)="_emitFocus($event)" [attr.id]="id" [disabled]="disabled" [readonly]="readonly" [attr.type]="type" class="sim-input" [class.sim-input-search]="type==='search'" [ngClass]="_classMap" [attr.placeholder]="placeholder"
+        [(ngModel)]="value">
+</ng-template>
+<ng-template [ngIf]="type=='textarea'">
+    <textarea (blur)="_emitBlur($event)" (focus)="_emitFocus($event)" (input)="textareaOnChange($event)" [attr.id]="id" #inputTextarea [disabled]="disabled" [readonly]="readonly" type="textarea" [attr.rows]="rows" [attr.cols]="cols" class="sim-input" [ngClass]="_classMap"
+        [attr.placeholder]="placeholder" [(ngModel)]="value"></textarea>
+</ng-template>
+<span class="sim-input-suffix" *ngIf="(type==='search')||(_suffixContent)">
+  <i class="sim-icon sim-icon-search sim-input-search-icon" *ngIf="type==='search'" (click)="_emitSearch()"></i>
+  <ng-template [ngTemplateOutlet]="_suffixContent"></ng-template>
+</span>
+<span class="sim-input-group-addon" *ngIf="_addOnContentAfter">
+  <ng-template [ngTemplateOutlet]="_addOnContentAfter"></ng-template>
+</span>

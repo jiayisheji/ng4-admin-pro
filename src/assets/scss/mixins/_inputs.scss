@@ -1,0 +1,6 @@
+// Input sizes
+@mixin input-size($padding, $font-size, $line-height) {
+    padding: $padding;
+    font-size: $font-size;
+    line-height: $line-height;
+}

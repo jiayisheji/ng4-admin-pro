@@ -1,0 +1,147 @@
+@import '../../../assets/scss/default.scss';
+@import '../../../assets/scss/mixins/_inputs.scss';
+.sim-input {
+    font-family: $font-family-base;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    padding: 4px 11px;
+    width: 100%;
+    height: 32px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.65);
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    transition: all .3s;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.sim-input::-moz-placeholder {
+    color: #bfbfbf;
+    opacity: 1;
+}
+
+.sim-input:-ms-input-placeholder {
+    color: #bfbfbf;
+}
+
+.sim-input::-webkit-input-placeholder {
+    color: #bfbfbf;
+}
+
+.sim-input:hover {
+    border-color: #40a9ff;
+}
+
+.sim-input:focus {
+    border-color: #40a9ff;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.sim-input-disabled {
+    background-color: #f5f5f5;
+    opacity: 1;
+    cursor: not-allowed;
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.sim-input-disabled:hover {
+    border-color: #e6d8d8;
+}
+
+textarea.sim-input {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    -webkit-transition: all .3s, height 0s;
+    transition: all .3s, height 0s;
+    min-height: 32px;
+}
+
+.sim-input-affix-wrapper {
+    font-family: "Monospace Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.65);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.sim-input-affix-wrapper .sim-input {
+    z-index: 1;
+}
+
+.sim-input-affix-wrapper:hover .sim-input:not(.sim-input-disabled) {
+    border-color: #40a9ff;
+}
+
+.sim-input-affix-wrapper .sim-input-prefix,
+.sim-input-affix-wrapper .sim-input-suffix {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 2;
+    line-height: 0;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.sim-input-affix-wrapper .sim-input-prefix {
+    left: 12px;
+}
+
+.sim-input-affix-wrapper .sim-input-suffix {
+    right: 12px;
+}
+
+.sim-input-affix-wrapper .sim-input:not(:first-child) {
+    padding-left: 30px;
+}
+
+.sim-input-affix-wrapper .sim-input:not(:last-child) {
+    padding-right: 30px;
+}
+
+.sim-input-affix-wrapper .sim-input {
+    min-height: 100%;
+}
+
+.sim-input-xl {
+    padding: 6px 11px;
+    height: 40px;
+    font-size: 16px;
+}
+
+.sim-input-lg {
+    @include input-size($input-padding-lg, $font-size-lg, $line-height-lg);
+}
+
+.sim-input-md {
+    padding: 1px 7px;
+    height: 24px;
+}
+
+.sim-input-sm {
+    padding: 1px 7px;
+    height: 24px;
+}
+
+.sim-input-xm {
+    padding: 1px 7px;
+    height: 24px;
+}
