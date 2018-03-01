@@ -1,6 +1,6 @@
 import { Injectable, Optional, SkipSelf, NgZone, OnDestroy } from '@angular/core';
 import { Platform } from '../platform';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/RX';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 import 'rxjs/add/operator/auditTime';
 import 'rxjs/add/operator/merge';
