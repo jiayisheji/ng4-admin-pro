@@ -13,7 +13,7 @@ import { AvatarModule } from './avatar';
 import { BadgeModule } from './badge';
 import { FormModule } from './form';
 import { InputModule } from './input';
-
+import { DropdownModule } from './dropdown';
 
 @NgModule({
     exports: [
@@ -27,6 +27,7 @@ import { InputModule } from './input';
         BadgeModule,
         FormModule,
         InputModule,
+        DropdownModule
     ]
 })
 export class SimpleModule {
