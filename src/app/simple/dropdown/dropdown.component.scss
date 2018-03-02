@@ -1,0 +1,245 @@
+$font-size-base: 12px;
+$line-height-base: 1.5;
+$component-background : #fff;
+$box-shadow-base: 0 1px 6px rgba(0, 0, 0, .2);
+
+$border-radius-base: 4px;
+$text-color: fade(0, 0, 0, 65%);
+$text-color-secondary: fade(#000, 43%);
+$text-color-secondary-dark: fade(#fff, 67%);
+.sim-dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: $font-size-base;
+    font-weight: normal;
+    line-height: 1.5;
+    &-wrap {
+        position: relative;
+        .sim-dropdown-btn>.icon-down {
+            font-style: normal;
+            vertical-align: baseline;
+            text-transform: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: rgba(0, 0, 0, .43);
+            display: inline-block;
+            font-size: 12px;
+            transform: scale(.75) rotate(0deg);
+            &:before {
+                transition: transform 0.2s ease;
+            }
+        }
+    }
+    &-wrap-open {
+        .icon-down:before {
+            transform: rotate(180deg);
+        }
+    }
+    &-hidden,
+    &-menu-hidden {
+        display: none;
+    }
+    &-menu {
+        outline: none;
+        position: relative;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        background-color: $component-background;
+        border-radius: $border-radius-base;
+        box-shadow: $box-shadow-base;
+        background-clip: padding-box;
+        &-item-group-title {
+            color: $text-color-secondary;
+            padding: 6px 8px;
+            transition: all .3s;
+        }
+        &-item,
+        &-submenu-title {
+            padding: 7px 8px;
+            margin: 0;
+            clear: both;
+            font-size: $font-size-base;
+            font-weight: normal;
+            color: $text-color;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all .3s;
+            >a {
+                color: $text-color;
+                display: block;
+                padding: 7px 8px;
+                margin: -7px -8px;
+                transition: all .3s;
+                &:focus {
+                    text-decoration: none;
+                }
+            }
+            &-selected,
+            &-selected>a {
+                color: #108ee9;
+                background-color: #ecf6fd;
+            }
+            &:hover {
+                background-color: #ecf6fd;
+            }
+            &-disabled {
+                color: rgba(0, 0, 0, .25);
+                cursor: not-allowed;
+                &:hover {
+                    color: rgba(0, 0, 0, .25);
+                    background-color: #fff;
+                    cursor: not-allowed;
+                }
+            }
+            &:first-child,
+            &:first-child>a {
+                border-radius: $border-radius-base $border-radius-base 0 0;
+            }
+            &:last-child,
+            &:last-child>a {
+                border-radius: 0 0 $border-radius-base $border-radius-base;
+            }
+            &:only-child,
+            &:only-child>a {
+                border-radius: $border-radius-base;
+            }
+            &-divider {
+                height: 1px;
+                overflow: hidden;
+                background-color: #e9e9e9;
+                line-height: 0;
+            }
+        }
+        &-submenu-title:after {
+            font-family: "jiayiicon" !important;
+            position: absolute;
+            content: "\e61f";
+            right: 8px;
+            color: $text-color-secondary;
+            font-style: normal;
+            vertical-align: baseline;
+            text-transform: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: rgba(0, 0, 0, .43);
+            display: inline-block;
+            font-size: 12px;
+            transform: scale(.75) rotate(0deg);
+        }
+        &-submenu-vertical {
+            position: relative;
+        }
+        &-submenu-vertical>& {
+            top: 0;
+            left: 100%;
+            position: absolute;
+            min-width: 100%;
+            margin-left: 4px;
+            transform-origin: 0 0;
+        }
+        &-submenu.sim-dropdown-menu-submenu-disabled .sim-dropdown-menu-submenu-title {
+            &,
+            &:after {
+                color: rgba(0, 0, 0, .25);
+            }
+        }
+        &-submenu:first-child &-submenu-title {
+            border-radius: $border-radius-base $border-radius-base 0 0;
+        }
+        &-submenu:last-child &-submenu-title {
+            border-radius: 0 0 $border-radius-base $border-radius-base;
+        }
+    }
+    &.slide-down-enter.slide-down-enter-active.sim-dropdown-menu-placement-bottomLeft,
+    &.slide-down-appear.slide-down-appear-active.sim-dropdown-menu-placement-bottomLeft,
+    &.slide-down-enter.slide-down-enter-active.sim-dropdown-menu-placement-bottomCenter,
+    &.slide-down-appear.slide-down-appear-active.sim-dropdown-menu-placement-bottomCenter,
+    &.slide-down-enter.slide-down-enter-active.sim-dropdown-menu-placement-bottomRight,
+    &.slide-down-appear.slide-down-appear-active.sim-dropdown-menu-placement-bottomRight {
+        animation-name: antSlideUpIn;
+    }
+    &.slide-up-enter.slide-up-enter-active.sim-dropdown-menu-placement-topLeft,
+    &.slide-up-appear.slide-up-appear-active.sim-dropdown-menu-placement-topLeft,
+    &.slide-up-enter.slide-up-enter-active.sim-dropdown-menu-placement-topCenter,
+    &.slide-up-appear.slide-up-appear-active.sim-dropdown-menu-placement-topCenter,
+    &.slide-up-enter.slide-up-enter-active.sim-dropdown-menu-placement-topRight,
+    &.slide-up-appear.slide-up-appear-active.sim-dropdown-menu-placement-topRight {
+        animation-name: antSlideDownIn;
+    }
+    &.slide-down-leave.slide-down-leave-active.sim-dropdown-menu-placement-bottomLeft,
+    &.slide-down-leave.slide-down-leave-active.sim-dropdown-menu-placement-bottomCenter,
+    &.slide-down-leave.slide-down-leave-active.sim-dropdown-menu-placement-bottomRight {
+        animation-name: antSlideUpOut;
+    }
+    &.slide-up-leave.slide-up-leave-active.sim-dropdown-menu-placement-topLeft,
+    &.slide-up-leave.slide-up-leave-active.sim-dropdown-menu-placement-topCenter,
+    &.slide-up-leave.slide-up-leave-active.sim-dropdown-menu-placement-topRight {
+        animation-name: antSlideDownOut;
+    }
+}
+
+.sim-dropdown-trigger,
+.sim-dropdown-link {
+    .icon-down {
+        font-style: normal;
+        vertical-align: baseline;
+        text-transform: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: rgba(0, 0, 0, .43);
+        display: inline-block;
+        font-size: 12px;
+        transform: scale(.75) rotate(0deg);
+    }
+}
+
+.sim-dropdown-button {
+    white-space: nowrap;
+    &.sim-btn-group>.sim-btn:last-child:not(:first-child) {
+        padding-right: 8px;
+    }
+    .icon-down {
+        font-style: normal;
+        vertical-align: baseline;
+        text-transform: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: rgba(0, 0, 0, .43);
+        display: inline-block;
+        font-size: 12px;
+        transform: scale(.75) rotate(0deg);
+    }
+}
+
+// https://github.com/ant-design/ant-design/issues/4903
+.sim-dropdown-menu-dark {
+    &,
+    .sim-dropdown-menu {
+    }
+    .sim-dropdown-menu-item,
+    .sim-dropdown-menu-submenu-title,
+    .sim-dropdown-menu-item>a {
+        color: $text-color-secondary-dark;
+        &:after {
+            color: $text-color-secondary-dark;
+        }
+        &:hover {
+            color: #fff;
+            background: transparent;
+        }
+    }
+    .sim-dropdown-menu-item-selected {
+        &,
+        &:hover,
+        >a {
+            background: #108ee9;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<div>
+  <ng-content></ng-content>
+</div>
+<ng-template cdkConnectedOverlay [cdkConnectedOverlayHasBackdrop]="_hasBackdrop" [cdkConnectedOverlayPositions]="_positions"
+  [cdkConnectedOverlayOrigin]="_nzOrigin" (backdropClick)="_hide()" [cdkConnectedOverlayMinWidth]="_triggerWidth" (positionChange)="_onPositionChange($event)"
+  [cdkConnectedOverlayOpen]="nzVisible">
+  <div class="{{'ant-dropdown ant-dropdown-placement-'+nzPlacement}}" [@dropDownAnimation]="_dropDownPosition" (mouseenter)="_onMouseEnterEvent($event)"
+    (mouseleave)="_onMouseLeaveEvent($event)" [style.minWidth.px]="_triggerWidth" (click)="_clickDropDown($event)">
+    <div [class.ant-table-filter-dropdown]="hasFilterButton">
+      <ng-content select="[sim-menu]"></ng-content>
+      <ng-content select="[sim-table-filter]"></ng-content>
+    </div>
+    <ng-content select="[sim-dropdown-custom]"></ng-content>
+  </div>
+</ng-template>
