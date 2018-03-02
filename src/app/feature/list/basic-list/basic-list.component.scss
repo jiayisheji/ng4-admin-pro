@@ -1,0 +1,61 @@
+.m-task {
+  .sim-card-content {
+    padding: 24px 32px;
+    >div {
+      position: relative;
+      text-align: center;
+      span {
+        color: rgba(0, 0, 0, 0.45);
+        display: inline-block;
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 4px;
+      }
+      p {
+        color: rgba(0, 0, 0, 0.85);
+        font-size: 24px;
+        line-height: 32px;
+      }
+      &:not(:last-child):after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 56px;
+        width: 1px;
+        background-color: #e8e8e8;
+      }
+    }
+  }
+}
+
+.list-item-meta-avatar {
+  margin-right: 16px;
+}
+
+.list-item-content {
+  font-size: 0;
+  >div {
+    color: rgba(0, 0, 0, 0.45);
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 40px;
+    span {
+      line-height: 20px;
+    }
+    p {
+      margin-top: 4px;
+      margin-bottom: 0;
+      line-height: 22px;
+    }
+    .sim-progress {
+      position: relative;
+      top: -16px;
+      width: 188px;
+    }
+  }
+}
+
+.sim-list-item-action {
+  margin-left: 48px;
+}

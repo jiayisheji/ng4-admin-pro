@@ -1,35 +1,90 @@
-<div class="page-header">
-    <sim-breadcrumb></sim-breadcrumb>
-    <div>
-        <h2>标准列表</h2>
-    </div>
-</div>
+<app-page-header></app-page-header>
 <div class="page-content">
-    <sim-card>
-        <sim-card-content>
+  <sim-card class="m-task">
+    <sim-card-content fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxFlex="33.33%">
+        <span>我的待办</span>
+        <p>8个任务</p>
+      </div>
+      <div fxFlex="33.33%">
+        <span>本周任务平均处理时间</span>
+        <p>32分钟</p>
+      </div>
+      <div fxFlex="33.33%">
+        <span>本周完成任务数</span>
+        <p>24个任务</p>
+      </div>
+    </sim-card-content>
+  </sim-card>
+  <sim-card sim-card-paddings style="margin-top: 24px;">
+    <sim-card-header>
+      <div class="card-header-title">
+        标准列表
+      </div>
+      <div class="card-header-extra">
+
+      </div>
+    </sim-card-header>
+    <sim-card-content>
+      <button type="button" sim-button [color]="'primary'" [shape]="'dashed'" style="width: 100%; margin-bottom: 8px;">
+        <i class="icon-plus"></i>
+        <span>添加</span>
+      </button>
+      <sim-list [dataSource]="_list" [loading]="_loading" [split]="true">
+        <sim-list-item *ngFor="let item of _list" fxLayout="row" fxLayoutAlign="space-between center">
+          <sim-list-item-meta>
+            <ng-template #avatar>
+              <span sim-avatar [avatarSrc]="item.avatar" [avatarShapes]="'square'"></span>
+            </ng-template>
+            <ng-template #title>
+              <a href="https://ant.design">{{item.title}}</a>
+            </ng-template>
+            <ng-template #description>
+               {{item.subDescription}}
+            </ng-template>
+          </sim-list-item-meta>
+          <sim-list-item-content>
             <div>
-
+              <span>Owner</span>
+              <p>{{item.owner}}</p>
             </div>
             <div>
-
+              <span>开始时间</span>
+              <p>{{item.createdAt | date : 'yyyy-MM-dd hh:mm'}}</p>
             </div>
             <div>
-
+              <div class="sim-progress">
+                <div>
+                  <div class="ant-progress-outer">
+                    <div class="ant-progress-inner">
+                      <div class="ant-progress-bg" style="width: 68%; height: 6px;"></div>
+                    </div>
+                  </div>
+                  <span class="ant-progress-text">68%</span>
+                </div>
+              </div>
             </div>
-        </sim-card-content>
-    </sim-card>
-    <sim-card sim-card-paddings style="margin-top: 24px;">
-        <sim-card-header>
-            <div class="card-header-title">
-                标准列表
-            </div>
-            <div class="card-header-extra">
-
-            </div>
-        </sim-card-header>
-        <sim-card-content>
-            <button type="button" sim-button [color]="'primary'" [shape]="'dashed'" style="width: 100%; margin-bottom: 8px;"><i class="icon-plus"></i><span>添加</span></button>
-
-        </sim-card-content>
-    </sim-card>
+          </sim-list-item-content>
+          <sim-list-item-action fxFlex="130px">
+            <sim-action>
+              <a [routerLink]="[ '/basic-list', item.id ]">编辑</a>
+            </sim-action>
+            <sim-action>
+              <sim-dropdown>
+                <a class="ant-dropdown-link" sim-dropdown>
+                  更多
+                  <i class="icon-down"></i>
+                </a>
+                <ul sim-menu>
+                  <li sim-menu-item>Clicking me will not close the menu.</li>
+                  <li sim-menu-item>Clicking me will not close the menu also.</li>
+                  <li sim-menu-item (click)="visible = false">Clicking me will close the menu</li>
+                </ul>
+              </sim-dropdown>
+            </sim-action>
+          </sim-list-item-action>
+        </sim-list-item>
+      </sim-list>
+    </sim-card-content>
+  </sim-card>
 </div>
