@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/jiayisheji/ng4-admin-pro/compare/v0.5.0...v0.6.0) (2018-03-02)
+
+
+### Bug Fixes
+
+* **CDK模块:**  scrolling模块 修复viewport-ruler里Observable引入方式 ([94c98fa](https://github.com/jiayisheji/ng4-admin-pro/commit/94c98fa))
+* **共享模块:** 修复Breadcrumb模块和组件引用配置文件run 报错问题 ([542d913](https://github.com/jiayisheji/ng4-admin-pro/commit/542d913))
+* **布局模块:**  layout模块 修复引入为不存在的组件 ([6080a4b](https://github.com/jiayisheji/ng4-admin-pro/commit/6080a4b))
+
+
+### Features
+
+* **CDK模块:** 添加通用cdk常用模块 ([1cafcda](https://github.com/jiayisheji/ng4-admin-pro/commit/1cafcda))
+* **UI组件模块:**  list模块 完善细节 ([9997dee](https://github.com/jiayisheji/ng4-admin-pro/commit/9997dee))
+* **UI组件模块:**  simple模块 新增Badge模块 ([27abc9b](https://github.com/jiayisheji/ng4-admin-pro/commit/27abc9b))
+* **UI组件模块:**  simple模块 新增Dropdown模块 ([d2b2d26](https://github.com/jiayisheji/ng4-admin-pro/commit/d2b2d26))
+* **UI组件模块:**  simple模块 新增form和input模块 ([76bca88](https://github.com/jiayisheji/ng4-admin-pro/commit/76bca88))
+* **UI组件模块:**  添加badge模块 ([0519046](https://github.com/jiayisheji/ng4-admin-pro/commit/0519046))
+* **UI组件模块:**  添加button模块 ([c4af028](https://github.com/jiayisheji/ng4-admin-pro/commit/c4af028))
+* **UI组件模块:**  添加dropdown模块 ([97aa90b](https://github.com/jiayisheji/ng4-admin-pro/commit/97aa90b))
+* **UI组件模块:**  添加form模块 ([e9a7f8c](https://github.com/jiayisheji/ng4-admin-pro/commit/e9a7f8c))
+* **UI组件模块:**  添加input模块 ([9bc1d6f](https://github.com/jiayisheji/ng4-admin-pro/commit/9bc1d6f))
+* **全局布局:**  添加header-topbar组件 ([083fff6](https://github.com/jiayisheji/ng4-admin-pro/commit/083fff6))
+* **公共模块:**  default.scss 添加默认全局变量 ([e9e1cf7](https://github.com/jiayisheji/ng4-admin-pro/commit/e9e1cf7))
+* **共享模块:**  shared模块 新增Forms和ReactiveForms模块 ([6aad2fe](https://github.com/jiayisheji/ng4-admin-pro/commit/6aad2fe))
+* **共享模块:**  shared模块 新增PageHeader和PageContent组件 ([c77b6fc](https://github.com/jiayisheji/ng4-admin-pro/commit/c77b6fc))
+* **共享模块:** 添加page-content组件 ([a6557e6](https://github.com/jiayisheji/ng4-admin-pro/commit/a6557e6))
+* **共享模块:** 添加page-header组件 ([83534a9](https://github.com/jiayisheji/ng4-admin-pro/commit/83534a9))
+* **列表模块:**  basic-list组件 完善组件内容 ([78f3d45](https://github.com/jiayisheji/ng4-admin-pro/commit/78f3d45))
+* **布局模块:**  添加sider-menu组件 ([fc0ade1](https://github.com/jiayisheji/ng4-admin-pro/commit/fc0ade1))
+* **用户模块:**  完善登录界面和验证跳转行为 ([8bbd4a0](https://github.com/jiayisheji/ng4-admin-pro/commit/8bbd4a0))
+
+
+### Performance Improvements
+
+* **UI组件模块:**  menu模块 优化细节 ([d47d5fb](https://github.com/jiayisheji/ng4-admin-pro/commit/d47d5fb))
+* **全局布局:**  移除多余文件，调整布局 ([39dd781](https://github.com/jiayisheji/ng4-admin-pro/commit/39dd781))
+* **公共模块:**  font字体更新 ([843c708](https://github.com/jiayisheji/ng4-admin-pro/commit/843c708))
+* **公共模块:**  icon.scss 更新classname和字体符 ([1f00689](https://github.com/jiayisheji/ng4-admin-pro/commit/1f00689))
+* **公共模块:**  styles样式 移除button样式 ([2fe8f59](https://github.com/jiayisheji/ng4-admin-pro/commit/2fe8f59))
+* **共享模块:**  page-header组件 使用ngTemplate代替ngContent，提高灵活度 ([3e8fb71](https://github.com/jiayisheji/ng4-admin-pro/commit/3e8fb71))
+* **布局模块:**  sider组件 简化成单个文件 ([73f955a](https://github.com/jiayisheji/ng4-admin-pro/commit/73f955a))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/jiayisheji/ng4-admin-pro/compare/v0.4.0...v0.5.0) (2017-12-04)
 
