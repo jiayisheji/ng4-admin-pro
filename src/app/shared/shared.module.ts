@@ -20,6 +20,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SimpleModule } from '@app/simple';
 
 import { BreadcrumbModule } from './breadcrumb';
+import { PageHeaderComponent } from './page-header';
+import { PageContentComponent } from './page-content';
 
 @NgModule({
   imports: [
@@ -32,6 +34,8 @@ import { BreadcrumbModule } from './breadcrumb';
     BreadcrumbModule.forRoot(getNavData),
   ],
   declarations: [
+    PageHeaderComponent,
+    PageContentComponent
   ],
   exports: [
     CommonModule,
@@ -41,6 +45,8 @@ import { BreadcrumbModule } from './breadcrumb';
     BreadcrumbModule,
     FormsModule,
     ReactiveFormsModule,
+    PageHeaderComponent,
+    PageContentComponent
   ]
 })
 export class SharedModule { }
