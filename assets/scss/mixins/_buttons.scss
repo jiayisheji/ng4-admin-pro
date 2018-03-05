@@ -1,0 +1,187 @@
+// Button sizes
+@mixin button-size($padding, $font-size, $line-height, $border-radius) {
+    padding: $padding;
+    font-size: $font-size;
+    line-height: $line-height;
+    border-radius: $border-radius;
+}
+
+@mixin button-size-circle($size, $border-radius) {
+    width: $size;
+    height: $size;
+    border-radius: $border-radius;
+}
+
+@mixin button-variant-link($color) {
+    color: $color;
+    &:focus,
+    &.focus {
+        outline: 0;
+        color: darken($color, 10%);
+    }
+    &:hover {
+        color: darken($color, 10%);
+        &:active,
+        &.active {
+            outline: 0;
+            color: darken($color, 10%);
+        }
+        &.disabled,
+        &[disabled] {
+            pointer-events: none;
+            cursor: not-allowed;
+            box-shadow: none;
+            opacity: 0.65;
+        }
+    }
+}
+
+@mixin button-variant-dashed($color, $background, $border) {
+    color: rgba(0, 0, 0, .65);
+    background-color: $background;
+    border-color: $border;
+    &:focus,
+    &.focus {}
+    &:hover {
+        color: $color;
+        background-color: $background;
+        border-color: $color;
+    }
+    &:active {
+        box-shadow: none;
+        &:after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            bottom: -1px;
+            right: -1px;
+            border-radius: inherit;
+            border: 0 solid $color;
+            opacity: 0.4;
+            animation: buttonEffect .4s;
+        }
+    }
+    &.active,
+    .open>&.dropdown-toggle {
+        color: $background;
+        background-color: darken($color, 10%);
+        border-color: darken($color, 12%);
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
+        opacity: 0.65;
+        &:hover,
+        &:focus,
+        &.focus {
+            color: rgba(0, 0, 0, .65);
+            background-color: $background;
+            border-color: $border;
+        }
+    }
+}
+
+@mixin button-variant-outline($color, $background, $border) {
+    color: $color;
+    background-color: $background;
+    border-color: rgba($color, 0.7);
+    &:after {
+        content: none;
+    }
+    &:focus,
+    &.focus {}
+    &:hover {
+        color: darken($color, 10%);
+        background-color: rgba($color, 0.05);
+        border-color: $color;
+    }
+    &:active {
+        box-shadow: none;
+        &:after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            bottom: -1px;
+            right: -1px;
+            border-radius: inherit;
+            border: 0 solid $color;
+            opacity: 0.4;
+            animation: buttonEffect .4s;
+        }
+    }
+    &:active,
+    &.active,
+    .open>&.dropdown-toggle {
+        color: darken($color, 10%);
+        background-color: rgba($color, 0.1);
+        border-color: $color;
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
+        opacity: 0.65;
+        &:hover,
+        &:focus,
+        &.focus {
+            background-color: $background;
+            border-color: rgba($color, 0.7);
+        }
+    }
+}
+
+@mixin button-variant($color, $background, $border) {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+    &:focus,
+    &.focus {
+        outline: 0;
+    }
+    &:hover {
+        color: $color;
+        background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+    }
+    &:active {
+        outline: 0;
+        box-shadow: rgba(0, 0, 0, 0.125) 0px 3px 5px inset;
+    }
+    &:active,
+    &.active,
+    .open>&.dropdown-toggle {
+        outline: 0;
+        color: $color;
+        background-color: darken($background, 15%);
+        border-color: darken($border, 18%);
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
+        opacity: 0.65;
+        &:hover,
+        &:focus,
+        &.focus {
+            background-color: $background;
+            border-color: $border;
+        }
+    }
+}
+
+@keyframes buttonEffect {
+    to {
+        opacity: 0;
+        top: -6px;
+        left: -6px;
+        bottom: -6px;
+        right: -6px;
+        border-width: 6px;
+    }
+}

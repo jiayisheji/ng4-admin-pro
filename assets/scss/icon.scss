@@ -1,12 +1,13 @@
+@import './default.scss';
 @font-face {
-    font-family: 'jiayiicon';
+    font-family: $font-family-icon;
     src: url('assets/fonts/font.eot');
     src: url('assets/fonts/font.woff') format('woff'), url('assets/fonts/font.ttf') format('truetype'), url('assets/fonts/font.svg#iconfont') format('svg');
 }
 
 [class^="icon-"],
 [class*=" icon-"] {
-    font-family: "jiayiicon" !important;
+    font-family: $font-family-icon !important;
     display: inline-block;
     font-style: normal;
     vertical-align: baseline;
@@ -131,59 +132,59 @@
     content: "\e603";
 }
 
-.icon-caretright:before {
+.icon-caret-right:before {
     content: "\e604";
 }
 
-.icon-caretleft:before {
+.icon-caret-left:before {
     content: "\e605";
 }
 
-.icon-caretdown:before {
+.icon-caret-down:before {
     content: "\e606";
 }
 
-.icon-caretup:before {
+.icon-caret-up:before {
     content: "\e607";
 }
 
-.icon-rightcircle:before {
+.icon-right-circle:before {
     content: "\e608";
 }
 
-.icon-leftcircle:before {
+.icon-left-circle:before {
     content: "\e609";
 }
 
-.icon-upcircle:before {
+.icon-up-circle:before {
     content: "\e60a";
 }
 
-.icon-downcircle:before {
+.icon-down-circle:before {
     content: "\e60b";
 }
 
-.icon-rightcircleo:before {
+.icon-right-circle-o:before {
     content: "\e60c";
 }
 
-.icon-leftcircleo:before {
+.icon-left-circle-o:before {
     content: "\e60d";
 }
 
-.icon-upcircleo:before {
+.icon-up-circle-o:before {
     content: "\e60e";
 }
 
-.icon-downcircleo:before {
+.icon-down-circle-o:before {
     content: "\e60f";
 }
 
-.icon-verticleleft:before {
+.icon-verticle-left:before {
     content: "\e610";
 }
 
-.icon-verticleright:before {
+.icon-verticle-right:before {
     content: "\e611";
 }
 
@@ -199,31 +200,31 @@
     content: "\e614";
 }
 
-.icon-arrowsalt:before {
+.icon-arrows-alt:before {
     content: "\e615";
 }
 
-.icon-doubleright:before {
+.icon-double-right:before {
     content: "\e617";
 }
 
-.icon-doubleleft:before {
+.icon-double-left:before {
     content: "\e618";
 }
 
-.icon-arrowdown:before {
+.icon-arrow-down:before {
     content: "\e619";
 }
 
-.icon-arrowup:before {
+.icon-arrow-up:before {
     content: "\e61a";
 }
 
-.icon-arrowright:before {
+.icon-arrow-right:before {
     content: "\e61b";
 }
 
-.icon-arrowleft:before {
+.icon-arrow-left:before {
     content: "\e61c";
 }
 
@@ -243,15 +244,15 @@
     content: "\e620";
 }
 
-.icon-minussquareo:before {
+.icon-minuss-quare-o:before {
     content: "\e621";
 }
 
-.icon-minuscircle:before {
+.icon-minus-circle:before {
     content: "\e622";
 }
 
-.icon-minuscircleo:before {
+.icon-minus-circle-o:before {
     content: "\e623";
 }
 
@@ -259,11 +260,11 @@
     content: "\e624";
 }
 
-.icon-pluscircleo:before {
+.icon-plus-circle-o:before {
     content: "\e625";
 }
 
-.icon-pluscircle:before {
+.icon-plus-circle:before {
     content: "\e626";
 }
 
@@ -271,11 +272,11 @@
     content: "\e627";
 }
 
-.icon-infocirlce:before {
+.icon-info-cirlce:before {
     content: "\e628";
 }
 
-.icon-infocirlceo:before {
+.icon-info-cirlce-o:before {
     content: "\e629";
 }
 
@@ -287,27 +288,27 @@
     content: "\e62b";
 }
 
-.icon-exclamationcircle:before {
+.icon-exclamation-circle:before {
     content: "\e62c";
 }
 
-.icon-exclamationcircleo:before {
+.icon-exclamation-circle-o:before {
     content: "\e62d";
 }
 
-.icon-closecircle:before {
+.icon-close-circle:before {
     content: "\e62e";
 }
 
-.icon-closecircleo:before {
+.icon-close-circle-o:before {
     content: "\e62f";
 }
 
-.icon-checkcircle:before {
+.icon-check-circle:before {
     content: "\e630";
 }
 
-.icon-checkcircle-o:before {
+.icon-check-circle-o:before {
     content: "\e631";
 }
 
@@ -347,11 +348,11 @@
     content: "\e63a";
 }
 
-.icon-questioncircle:before {
+.icon-question-circle:before {
     content: "\e63b";
 }
 
-.icon-questioncircleo:before {
+.icon-question-circle-o:before {
     content: "\e63c";
 }
 
@@ -359,19 +360,19 @@
     content: "\e63d";
 }
 
-.icon-pausecircle:before {
+.icon-pause-circle:before {
     content: "\e63e";
 }
 
-.icon-pausecircleo:before {
+.icon-pause-circle-o:before {
     content: "\e63f";
 }
 
-.icon-clockcircle:before {
+.icon-clock-circle:before {
     content: "\e640";
 }
 
-.icon-clockcircleo:before {
+.icon-clock-circle-o:before {
     content: "\e641";
 }
 
@@ -379,15 +380,15 @@
     content: "\e642";
 }
 
-.icon-swapleft:before {
+.icon-swap-left:before {
     content: "\e643";
 }
 
-.icon-swapright:before {
+.icon-swap-right:before {
     content: "\e644";
 }
 
-.icon-plussquareo:before {
+.icon-pluss-quare-o:before {
     content: "\e645";
 }
 
@@ -407,11 +408,11 @@
     content: "\e65b";
 }
 
-.icon-areachart:before {
+.icon-area-chart:before {
     content: "\e65c";
 }
 
-.icon-linechart:before {
+.icon-line-chart:before {
     content: "\e65d";
 }
 
@@ -427,7 +428,7 @@
     content: "\e660";
 }
 
-.icon-staro:before {
+.icon-star-o:before {
     content: "\e661";
 }
 
@@ -435,7 +436,7 @@
     content: "\e663";
 }
 
-.icon-meho:before {
+.icon-meh-o:before {
     content: "\e666";
 }
 
@@ -443,7 +444,7 @@
     content: "\e667";
 }
 
-.icon-shoppingcart:before {
+.icon-shopping-cart:before {
     content: "\e668";
 }
 
@@ -455,7 +456,7 @@
     content: "\e66a";
 }
 
-.icon-videocamera:before {
+.icon-video-camera:before {
     content: "\e66b";
 }
 
@@ -467,7 +468,7 @@
     content: "\e66d";
 }
 
-.icon-sharealt:before {
+.icon-share-alt:before {
     content: "\e671";
 }
 
@@ -611,7 +612,7 @@
     content: "\e6a3";
 }
 
-.icon-hearto:before {
+.icon-heart-o:before {
     content: "\e6a4";
 }
 
@@ -619,11 +620,11 @@
     content: "\e6a7";
 }
 
-.icon-smileo:before {
+.icon-smile-o:before {
     content: "\e6a8";
 }
 
-.icon-frowno:before {
+.icon-frown-o:before {
     content: "\e6a9";
 }
 
@@ -655,7 +656,7 @@
     content: "\e6b7";
 }
 
-.icon-piechart:before {
+.icon-pie-chart:before {
     content: "\e6b8";
 }
 
@@ -667,39 +668,39 @@
     content: "\e6ba";
 }
 
-.icon-windowso:before {
+.icon-windows-o:before {
     content: "\e6bc";
 }
 
-.icon-dotchart:before {
+.icon-dot-chart:before {
     content: "\e6bd";
 }
 
-.icon-barchart:before {
+.icon-bar-chart:before {
     content: "\e6be";
 }
 
-.icon-codesquare:before {
+.icon-code-square:before {
     content: "\e6bf";
 }
 
-.icon-plussquare:before {
+.icon-plus-square:before {
     content: "\e6c0";
 }
 
-.icon-minussquare:before {
+.icon-minus-square:before {
     content: "\e6c1";
 }
 
-.icon-closesquare:before {
+.icon-close-square:before {
     content: "\e6c2";
 }
 
-.icon-closesquareo:before {
+.icon-close-square-o:before {
     content: "\e6c3";
 }
 
-.icon-checksquare:before {
+.icon-check-square:before {
     content: "\e6c4";
 }
 
@@ -715,19 +716,19 @@
     content: "\e6c7";
 }
 
-.icon-upsquare:before {
+.icon-up-square:before {
     content: "\e6c8";
 }
 
-.icon-downsquare:before {
+.icon-down-square:before {
     content: "\e6c9";
 }
 
-.icon-leftsquare:before {
+.icon-left-square:before {
     content: "\e6ca";
 }
 
-.icon-rightsquare:before {
+.icon-right-square:before {
     content: "\e6cb";
 }
 
@@ -751,7 +752,7 @@
     content: "\e6d0";
 }
 
-.icon-playcircleo:before {
+.icon-play-circle-o:before {
     content: "\e6d1";
 }
 
@@ -759,11 +760,11 @@
     content: "\e6d2";
 }
 
-.icon-tago:before {
+.icon-tag-o:before {
     content: "\e6d3";
 }
 
-.icon-addfile:before {
+.icon-add-file:before {
     content: "\e910";
 }
 
@@ -779,11 +780,11 @@
     content: "\e913";
 }
 
-.icon-addfolder:before {
+.icon-add-folder:before {
     content: "\e914";
 }
 
-.icon-folderopen:before {
+.icon-folder-open:before {
     content: "\e699";
 }
 
@@ -799,7 +800,7 @@
     content: "\e6bb";
 }
 
-.icon-filetext:before {
+.icon-file-text:before {
     content: "\e698";
 }
 
@@ -807,7 +808,7 @@
     content: "\e648";
 }
 
-.icon-jpgfile:before {
+.icon-jpg-file:before {
     content: "\e69c";
 }
 
@@ -815,19 +816,19 @@
     content: "\e6b3";
 }
 
-.icon-exclefile:before {
+.icon-excle-file:before {
     content: "\e6b0";
 }
 
-.icon-pptfile:before {
+.icon-ppt-file:before {
     content: "\e6b1";
 }
 
-.icon-unknowfile:before {
+.icon-unknow-file:before {
     content: "\e6af";
 }
 
-.icon-wordfile:before {
+.icon-word-file:before {
     content: "\e6b2";
 }
 
@@ -899,7 +900,7 @@
     content: "\e6dc";
 }
 
-.icon-addusergroup:before {
+.icon-add-usergroup:before {
     content: "\e6dd";
 }
 
@@ -907,11 +908,11 @@
     content: "\e6df";
 }
 
-.icon-deleteuser:before {
+.icon-delete-user:before {
     content: "\e6e0";
 }
 
-.icon-deleteusergroup:before {
+.icon-delete-usergroup:before {
     content: "\e6e1";
 }
 
